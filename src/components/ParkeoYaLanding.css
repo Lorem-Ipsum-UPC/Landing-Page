@@ -762,19 +762,52 @@
 .pricing-grid {
   display: grid;
   gap: 2rem;
-  max-width: 1152px;
   margin: 0 auto;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
 }
 
-@media (min-width: 768px) {
+/* Móvil grande */
+@media (min-width: 480px) {
   .pricing-grid {
-    grid-template-columns: 1fr 1fr;
+    max-width: 400px;
   }
 }
 
-@media (min-width: 1024px) {
+/* Tablet - Grid siempre de 3 columnas */
+@media (min-width: 768px) {
   .pricing-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    justify-items: center;
+  }
+  
+  /* Ajustes específicos para cada plan */
+  .pricing-grid .pricing-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .pricing-grid {
+    max-width: 1200px;
+    gap: 2rem;
+  }
+  
+  .pricing-grid .pricing-card {
+    max-width: 350px;
+  }
+}
+
+/* Desktop extra grande */
+@media (min-width: 1200px) {
+  .pricing-grid {
+    max-width: 1400px;
+    gap: 2.5rem;
   }
 }
 

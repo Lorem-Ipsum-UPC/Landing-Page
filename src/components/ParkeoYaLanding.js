@@ -541,7 +541,7 @@ const ParkeoYaLanding = () => {
             </div>
           </div>
 
-          <div className="pricing-grid">
+          <div className="pricing-grid" data-plan={selectedPlan}>
             {pricingPlans[selectedPlan].map((plan, index) => (
               <div
                 key={index}
