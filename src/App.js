@@ -1,5 +1,5 @@
 import React from 'react';
-import ParkeoYaLanding from './components/ParkeoYaLanding';
+import ParkeoYaLanding from './components/ParkeoYaLanding.js';
 import './App.css';
 
 function App() {

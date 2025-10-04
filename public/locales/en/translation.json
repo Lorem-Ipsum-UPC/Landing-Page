@@ -1,0 +1,323 @@
+{
+  "nav": {
+    "inicio": "Home",
+    "sobreNosotros": "About Us",
+    "caracteristicas": "Features",
+    "precios": "Pricing",
+    "casosExito": "Success Stories",
+    "contacto": "Contact",
+    "iniciarSesion": "Sign In",
+    "registrarse": "Sign Up"
+  },
+  "hero": {
+    "badge": "IoT Technology for Urban Mobility",
+    "title": "Find Parking ",
+    "titleGradient": "in Real Time",
+    "description": "IoT sensors detect availability instantly. Reserve, pay and park without circling. Optimize your time and your income.",
+    "conductorBtn": "I'm a Driver",
+    "propietarioBtn": "I'm an Owner",
+    "stats": {
+      "searchTime": "Less search time",
+      "co2Reduction": "CO₂ reduction",
+      "occupancy": "More occupancy"
+    },
+    "demoStatus": "spaces available near you",
+    "reserveBtn": "Reserve"
+  },
+  "features": {
+    "title": "IoT Technology That Works",
+    "subtitle": "Smart sensors for a frictionless experience",
+    "realTime": {
+      "title": "Real-Time Availability",
+      "description": "IoT sensors detect free spaces instantly. Save up to 15 minutes per search."
+    },
+    "geolocation": {
+      "title": "Smart Geolocation",
+      "description": "Find nearby parking with exact distances and integrated navigation."
+    },
+    "guarantee": {
+      "title": "Guaranteed Reservation",
+      "description": "Your space confirmed by sensors. No surprises, no circling."
+    },
+    "revenue": {
+      "title": "Maximize Revenue",
+      "description": "For owners: increase occupancy up to 20% with automated management."
+    }
+  },
+  "about": {
+    "badge": "Who We Are",
+    "title": "Revolutionizing Urban Mobility",
+    "description": "We are Lorem-Ipsum-UPC, a team of Software Engineering students from UPC committed to creating technological solutions that improve quality of life in cities.",
+    "mission": {
+      "title": "Mission",
+      "description": "Revolutionize the parking experience by connecting drivers and administrators through an intelligent platform that optimizes space usage and reduces search times."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "Establish ourselves as the leading startup in parking management solutions nationwide, contributing to efficient mobility through innovative and sustainable technology."
+    },
+    "values": {
+      "title": "Values",
+      "description": "Innovation, transparency, sustainability and commitment to continuous improvement. We prioritize user experience and positive environmental impact."
+    },
+    "problem": {
+      "title": "The Problem We Solve",
+      "description": "In Lima, more than 100,000 vehicles are added to the automotive fleet each year. Drivers lose up to 20 minutes looking for parking during peak hours, generating:",
+      "items": [
+        "60% of traffic in central areas due to parking search",
+        "Increased CO₂ emissions and pollution",
+        "Stress and frustration in daily drivers",
+        "Low profitability for parking lot owners"
+      ],
+      "stats": {
+        "vehicles": "New vehicles per year in Lima",
+        "time": "Average search time",
+        "traffic": "Of traffic looks for parking"
+      }
+    }
+  },
+  "detailedFeatures": {
+    "badge": "Features",
+    "title": "Cutting-Edge Technology",
+    "subtitle": "We integrate the latest innovations in IoT, edge computing and mobile applications to offer you the best experience.",
+    "sensors": {
+      "title": "Advanced IoT Sensors",
+      "description": "Real-time detection technology with 99.9% accuracy. Each space has sensors that communicate their status instantly."
+    },
+    "app": {
+      "title": "Multi-Platform App",
+      "description": "Smooth experience on iOS, Android and Web. Automatic synchronization between all your devices."
+    },
+    "notifications": {
+      "title": "Smart Notifications",
+      "description": "Customizable alerts for reservation expiration, new nearby spaces and special promotions."
+    },
+    "payments": {
+      "title": "Secure Payments",
+      "description": "Encrypted transactions with the highest security standards. Multiple payment methods available."
+    },
+    "analytics": {
+      "title": "Real-Time Analytics",
+      "description": "Complete dashboard with occupancy, revenue and trend metrics. Downloadable Excel reports."
+    },
+    "edge": {
+      "title": "Edge Computing",
+      "description": "Distributed processing for instant responses even without internet connection."
+    },
+    "processTitle": "How Does IoT Technology Work?",
+    "processDescription": "Each parking space has sensors that detect the presence of vehicles. Data is processed on local edge servers and synchronized with the cloud in real time, allowing instant updates in the application.",
+    "processSteps": {
+      "detect": "Sensor detects vehicle",
+      "process": "Edge server processes data",
+      "sync": "Cloud synchronization",
+      "update": "App update"
+    }
+  },
+  "pricing": {
+    "badge": "Plans and Pricing",
+    "title": "Solutions for Everyone",
+    "subtitle": "From individual drivers to large parking companies",
+    "conductorTab": "Driver",
+    "propietarioTab": "Parking Owner",
+    "conductor": {
+      "basic": {
+        "name": "Basic",
+        "price": "Free",
+        "period": "forever",
+        "features": [
+          "Unlimited parking search",
+          "Real-time reservations",
+          "Pay per use (no commissions)",
+          "Reservation history",
+          "Email support"
+        ]
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "S/ 9.90",
+        "period": "month",
+        "features": [
+          "Everything in Basic plan",
+          "Exclusive discounts (up to 15%)",
+          "Priority reservations",
+          "No ads",
+          "Priority 24/7 support",
+          "Loyalty program"
+        ]
+      }
+    },
+    "propietario": {
+      "starter": {
+        "name": "Starter",
+        "price": "S/ 49",
+        "period": "month",
+        "features": [
+          "Up to 20 spaces",
+          "5% commission per reservation",
+          "1 Edge Server included",
+          "Basic dashboard",
+          "Email support",
+          "IoT sensors (rental included)"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "price": "S/ 149",
+        "period": "month",
+        "features": [
+          "Up to 100 spaces",
+          "4% commission per reservation",
+          "3 Edge Servers included",
+          "Advanced analytics",
+          "Priority support",
+          "API access",
+          "Custom reports"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "features": [
+          "Unlimited spaces",
+          "Negotiable commission",
+          "Dedicated infrastructure",
+          "Dedicated 24/7 support",
+          "Custom integration",
+          "Guaranteed SLA",
+          "Consulting included"
+        ]
+      }
+    },
+    "selectBtn": "Select Plan",
+    "contactBtn": "Contact Sales",
+    "recommended": "Recommended",
+    "benefitsTitle": "What Do You Get with ParkeoYa?",
+    "conductorBenefits": [
+      "Find parking in seconds",
+      "Advance booking with QR code",
+      "Automatic payment for real time",
+      "Expiration notifications",
+      "History and parking reviews"
+    ],
+    "propietarioBenefits": [
+      "Control panel with real-time metrics",
+      "Automated space management",
+      "Revenue and occupancy reports",
+      "Transparent 5% commission",
+      "IoT sensor installation included"
+    ]
+  },
+  "caseStudies": {
+    "badge": "Success Stories",
+    "title": "Real Success Stories",
+    "subtitle": "Discover how ParkeoYa has transformed businesses and improved the driver experience",
+    "companies": [
+      {
+        "name": "Centro Parking",
+        "location": "San Isidro, Lima",
+        "testimonial": "ParkeoYa completely transformed our business. Automation allowed us to reduce staff and increase revenue simultaneously.",
+        "owner": "Carlos Mendoza"
+      },
+      {
+        "name": "Plaza Mall Parking",
+        "location": "Miraflores, Lima",
+        "testimonial": "Customers really appreciate being able to book before arriving. We've eliminated queues and improved the experience.",
+        "owner": "María Torres"
+      },
+      {
+        "name": "Express Park",
+        "location": "San Miguel, Lima",
+        "testimonial": "The investment was recovered in 4 months. Real-time reports help us make better decisions.",
+        "owner": "Roberto Silva"
+      }
+    ],
+    "metrics": {
+      "occupancy": "occupancy",
+      "revenue": "revenue",
+      "time": "search time"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Users Say",
+    "items": [
+      {
+        "name": "Joan Talizo",
+        "role": "Urban Driver",
+        "content": "I reduced 15 minutes of daily searching. The app is super intuitive and the sensors are accurate."
+      },
+      {
+        "name": "Rafael Soto",
+        "role": "Parking Owner",
+        "content": "I increased my occupancy by 20% and automated everything. The reports are clear and detailed."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's Talk About Your Project",
+    "description": "Have questions? Want a personalized demo? Our team is ready to help you.",
+    "methods": {
+      "email": "Email",
+      "phone": "Phone",
+      "office": "Office"
+    },
+    "address": "Universidad Peruana de Ciencias Aplicadas\nAv. Primavera 2390, Santiago de Surco\nLima, Peru",
+    "hours": {
+      "title": "Office Hours",
+      "weekdays": "Monday to Friday: 9:00 AM - 6:00 PM",
+      "saturday": "Saturdays: 9:00 AM - 1:00 PM"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "fields": {
+        "name": "Full Name",
+        "namePlaceholder": "John Doe",
+        "email": "Email",
+        "emailPlaceholder": "john@example.com",
+        "phone": "Phone",
+        "phonePlaceholder": "+51 999 888 777",
+        "userType": "User Type",
+        "userTypes": {
+          "conductor": "Driver",
+          "propietario": "Parking Owner",
+          "empresa": "Company",
+          "otro": "Other"
+        },
+        "message": "Message",
+        "messagePlaceholder": "Tell us how we can help you..."
+      },
+      "submitBtn": "Send Message"
+    }
+  },
+  "cta": {
+    "titles": {
+      "conductor": "Ready to find parking instantly?",
+      "propietario": "Ready to maximize your revenue?",
+      "default": "Ready to get started?"
+    },
+    "description": "Join ParkeoYa today and experience the difference of IoT technology",
+    "conductorBtn": "Register as Driver",
+    "propietarioBtn": "Register as Owner"
+  },
+  "footer": {
+    "description": "Smart parking with IoT technology for modern cities.",
+    "sections": {
+      "product": "Product",
+      "support": "Support",
+      "company": "Company"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "caseStudies": "Success Stories",
+      "help": "Help Center",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "about": "About Us",
+      "blog": "Blog",
+      "careers": "Careers"
+    },
+    "copyright": "© 2025 ParkeoYa - Lorem Ipsum UPC. All rights reserved."
+  }
+}

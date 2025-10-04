@@ -1,0 +1,323 @@
+{
+  "nav": {
+    "inicio": "Inicio",
+    "sobreNosotros": "Sobre Nosotros",
+    "caracteristicas": "Características",
+    "precios": "Precios",
+    "casosExito": "Casos de Éxito",
+    "contacto": "Contacto",
+    "iniciarSesion": "Iniciar Sesión",
+    "registrarse": "Registrarse"
+  },
+  "hero": {
+    "badge": "Tecnología IoT para Movilidad Urbana",
+    "title": "Encuentra Estacionamiento ",
+    "titleGradient": "en Tiempo Real",
+    "description": "Sensores IoT detectan disponibilidad al instante. Reserva, paga y estaciona sin dar vueltas. Optimiza tu tiempo y tus ingresos.",
+    "conductorBtn": "Soy Conductor",
+    "propietarioBtn": "Soy Propietario",
+    "stats": {
+      "searchTime": "Menos tiempo de búsqueda",
+      "co2Reduction": "Reducción de CO₂",
+      "occupancy": "Más ocupación"
+    },
+    "demoStatus": "espacios disponibles cerca de ti",
+    "reserveBtn": "Reservar"
+  },
+  "features": {
+    "title": "Tecnología IoT que Funciona",
+    "subtitle": "Sensores inteligentes para una experiencia sin fricciones",
+    "realTime": {
+      "title": "Disponibilidad en Tiempo Real",
+      "description": "Sensores IoT detectan espacios libres al instante. Ahorra hasta 15 minutos por búsqueda."
+    },
+    "geolocation": {
+      "title": "Geolocalización Inteligente",
+      "description": "Encuentra estacionamientos cercanos con distancias exactas y navegación integrada."
+    },
+    "guarantee": {
+      "title": "Reserva Garantizada",
+      "description": "Tu espacio confirmado por sensores. Sin sorpresas, sin dar vueltas."
+    },
+    "revenue": {
+      "title": "Maximiza Ingresos",
+      "description": "Para propietarios: aumenta ocupación hasta 20% con gestión automatizada."
+    }
+  },
+  "about": {
+    "badge": "Quiénes Somos",
+    "title": "Revolucionando la Movilidad Urbana",
+    "description": "Somos Lorem-Ipsum-UPC, un equipo de estudiantes de Ingeniería de Software de la UPC comprometidos con crear soluciones tecnológicas que mejoren la calidad de vida en las ciudades.",
+    "mission": {
+      "title": "Misión",
+      "description": "Revolucionar la experiencia de aparcamiento conectando a conductores y administradores mediante una plataforma inteligente que optimice el uso del espacio y reduzca tiempos de búsqueda."
+    },
+    "vision": {
+      "title": "Visión",
+      "description": "Consolidarnos como la startup líder en soluciones de gestión de estacionamientos a nivel nacional, aportando a la movilidad eficiente mediante tecnología innovadora y sostenible."
+    },
+    "values": {
+      "title": "Valores",
+      "description": "Innovación, transparencia, sostenibilidad y compromiso con la mejora continua. Priorizamos la experiencia del usuario y el impacto positivo en el medio ambiente."
+    },
+    "problem": {
+      "title": "El Problema que Resolvemos",
+      "description": "En Lima, más de 100,000 vehículos se suman al parque automotor cada año. Los conductores pierden hasta 20 minutos buscando estacionamiento en horas pico, generando:",
+      "items": [
+        "60% del tráfico en zonas céntricas por búsqueda de parking",
+        "Aumento de emisiones de CO₂ y contaminación",
+        "Estrés y frustración en conductores diarios",
+        "Baja rentabilidad para propietarios de playas"
+      ],
+      "stats": {
+        "vehicles": "Vehículos nuevos por año en Lima",
+        "time": "Tiempo promedio de búsqueda",
+        "traffic": "Del tráfico busca estacionamiento"
+      }
+    }
+  },
+  "detailedFeatures": {
+    "badge": "Características",
+    "title": "Tecnología de Vanguardia",
+    "subtitle": "Integramos las últimas innovaciones en IoT, edge computing y aplicaciones móviles para ofrecerte la mejor experiencia.",
+    "sensors": {
+      "title": "Sensores IoT Avanzados",
+      "description": "Tecnología de detección en tiempo real con precisión del 99.9%. Cada espacio cuenta con sensores que comunican su estado instantáneamente."
+    },
+    "app": {
+      "title": "App Multiplataforma",
+      "description": "Experiencia fluida en iOS, Android y Web. Sincronización automática entre todos tus dispositivos."
+    },
+    "notifications": {
+      "title": "Notificaciones Inteligentes",
+      "description": "Alertas personalizables para vencimiento de reserva, nuevos espacios cercanos y promociones especiales."
+    },
+    "payments": {
+      "title": "Pagos Seguros",
+      "description": "Transacciones encriptadas con los más altos estándares de seguridad. Múltiples métodos de pago disponibles."
+    },
+    "analytics": {
+      "title": "Analytics en Tiempo Real",
+      "description": "Dashboard completo con métricas de ocupación, ingresos y tendencias. Reportes descargables en Excel."
+    },
+    "edge": {
+      "title": "Edge Computing",
+      "description": "Procesamiento distribuido para respuestas instantáneas incluso sin conexión a internet."
+    },
+    "processTitle": "¿Cómo Funciona la Tecnología IoT?",
+    "processDescription": "Cada espacio de estacionamiento cuenta con sensores que detectan la presencia de vehículos. Los datos se procesan en edge servers locales y se sincronizan con la nube en tiempo real, permitiendo actualizaciones instantáneas en la aplicación.",
+    "processSteps": {
+      "detect": "Sensor detecta vehículo",
+      "process": "Edge server procesa datos",
+      "sync": "Sincronización con la nube",
+      "update": "Actualización en app"
+    }
+  },
+  "pricing": {
+    "badge": "Planes y Precios",
+    "title": "Soluciones para Todos",
+    "subtitle": "Desde conductores individuales hasta grandes empresas de estacionamiento",
+    "conductorTab": "Conductor",
+    "propietarioTab": "Propietario de Estacionamiento",
+    "conductor": {
+      "basic": {
+        "name": "Básico",
+        "price": "Gratis",
+        "period": "siempre",
+        "features": [
+          "Búsqueda ilimitada de estacionamientos",
+          "Reservas en tiempo real",
+          "Pago por uso (sin comisiones)",
+          "Historial de reservas",
+          "Soporte por email"
+        ]
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "S/ 9.90",
+        "period": "mes",
+        "features": [
+          "Todo lo del plan Básico",
+          "Descuentos exclusivos (hasta 15%)",
+          "Reservas prioritarias",
+          "Sin anuncios",
+          "Soporte prioritario 24/7",
+          "Programa de fidelización"
+        ]
+      }
+    },
+    "propietario": {
+      "starter": {
+        "name": "Starter",
+        "price": "S/ 49",
+        "period": "mes",
+        "features": [
+          "Hasta 20 espacios",
+          "Comisión 5% por reserva",
+          "1 Edge Server incluido",
+          "Dashboard básico",
+          "Soporte por email",
+          "Sensores IoT (alquiler incluido)"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "price": "S/ 149",
+        "period": "mes",
+        "features": [
+          "Hasta 100 espacios",
+          "Comisión 4% por reserva",
+          "3 Edge Servers incluidos",
+          "Analytics avanzado",
+          "Soporte prioritario",
+          "API access",
+          "Reportes personalizados"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Personalizado",
+        "period": "",
+        "features": [
+          "Espacios ilimitados",
+          "Comisión negociable",
+          "Infraestructura dedicada",
+          "Soporte 24/7 dedicado",
+          "Integración personalizada",
+          "SLA garantizado",
+          "Consultoría incluida"
+        ]
+      }
+    },
+    "selectBtn": "Seleccionar Plan",
+    "contactBtn": "Contactar Ventas",
+    "recommended": "Recomendado",
+    "benefitsTitle": "¿Qué Obtienes con ParkeoYa?",
+    "conductorBenefits": [
+      "Encuentra estacionamiento en segundos",
+      "Reserva anticipada con código QR",
+      "Pago automático por tiempo real",
+      "Notificaciones de vencimiento",
+      "Historial y reseñas de estacionamientos"
+    ],
+    "propietarioBenefits": [
+      "Panel de control con métricas en tiempo real",
+      "Gestión automatizada de espacios",
+      "Reportes de ingresos y ocupación",
+      "Comisión transparente del 5%",
+      "Instalación de sensores IoT incluida"
+    ]
+  },
+  "caseStudies": {
+    "badge": "Casos de Éxito",
+    "title": "Historias de Éxito Reales",
+    "subtitle": "Descubre cómo ParkeoYa ha transformado negocios y mejorado la experiencia de conductores",
+    "companies": [
+      {
+        "name": "Estacionamiento Centro",
+        "location": "San Isidro, Lima",
+        "testimonial": "ParkeoYa transformó completamente nuestro negocio. La automatización nos permitió reducir personal y aumentar ingresos simultáneamente.",
+        "owner": "Carlos Mendoza"
+      },
+      {
+        "name": "Plaza Mall Parking",
+        "location": "Miraflores, Lima",
+        "testimonial": "Los clientes valoran muchísimo poder reservar antes de llegar. Hemos eliminado colas y mejorado la experiencia.",
+        "owner": "María Torres"
+      },
+      {
+        "name": "Express Park",
+        "location": "San Miguel, Lima",
+        "testimonial": "La inversión se recuperó en 4 meses. Los reportes en tiempo real nos ayudan a tomar mejores decisiones.",
+        "owner": "Roberto Silva"
+      }
+    ],
+    "metrics": {
+      "occupancy": "ocupación",
+      "revenue": "ingresos",
+      "time": "tiempo de búsqueda"
+    }
+  },
+  "testimonials": {
+    "title": "Lo que Dicen Nuestros Usuarios",
+    "items": [
+      {
+        "name": "Joan Talizo",
+        "role": "Conductor Urbano",
+        "content": "Reduje 15 minutos de búsqueda diaria. La app es súper intuitiva y los sensores son precisos."
+      },
+      {
+        "name": "Rafael Soto",
+        "role": "Propietario de Estacionamiento",
+        "content": "Aumenté mi ocupación en 20% y automaticé todo. Los reportes son claros y detallados."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "Contacto",
+    "title": "Hablemos de tu Proyecto",
+    "description": "¿Tienes preguntas? ¿Quieres una demo personalizada? Nuestro equipo está listo para ayudarte.",
+    "methods": {
+      "email": "Email",
+      "phone": "Teléfono",
+      "office": "Oficina"
+    },
+    "address": "Universidad Peruana de Ciencias Aplicadas\nAv. Primavera 2390, Santiago de Surco\nLima, Perú",
+    "hours": {
+      "title": "Horario de Atención",
+      "weekdays": "Lunes a Viernes: 9:00 AM - 6:00 PM",
+      "saturday": "Sábados: 9:00 AM - 1:00 PM"
+    },
+    "form": {
+      "title": "Envíanos un Mensaje",
+      "fields": {
+        "name": "Nombre Completo",
+        "namePlaceholder": "Juan Pérez",
+        "email": "Email",
+        "emailPlaceholder": "juan@ejemplo.com",
+        "phone": "Teléfono",
+        "phonePlaceholder": "+51 999 888 777",
+        "userType": "Tipo de Usuario",
+        "userTypes": {
+          "conductor": "Conductor",
+          "propietario": "Propietario de Estacionamiento",
+          "empresa": "Empresa",
+          "otro": "Otro"
+        },
+        "message": "Mensaje",
+        "messagePlaceholder": "Cuéntanos cómo podemos ayudarte..."
+      },
+      "submitBtn": "Enviar Mensaje"
+    }
+  },
+  "cta": {
+    "titles": {
+      "conductor": "¿Listo para encontrar estacionamiento al instante?",
+      "propietario": "¿Listo para maximizar tus ingresos?",
+      "default": "¿Listo para empezar?"
+    },
+    "description": "Únete a ParkeoYa hoy y experimenta la diferencia de la tecnología IoT",
+    "conductorBtn": "Registrarme como Conductor",
+    "propietarioBtn": "Registrarme como Propietario"
+  },
+  "footer": {
+    "description": "Estacionamiento inteligente con tecnología IoT para ciudades modernas.",
+    "sections": {
+      "product": "Producto",
+      "support": "Soporte",
+      "company": "Empresa"
+    },
+    "links": {
+      "features": "Características",
+      "pricing": "Precios",
+      "caseStudies": "Casos de Éxito",
+      "help": "Centro de Ayuda",
+      "contact": "Contacto",
+      "faq": "FAQ",
+      "about": "Sobre Nosotros",
+      "blog": "Blog",
+      "careers": "Trabaja con Nosotros"
+    },
+    "copyright": "© 2025 ParkeoYa - Lorem Ipsum UPC. Todos los derechos reservados."
+  }
+}

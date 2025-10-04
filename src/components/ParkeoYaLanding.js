@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, DollarSign, Users, Smartphone, CheckCircle, Menu, X, ChevronRight, Star, Zap, Shield, TrendingUp, Target, Award, BarChart3, Globe, Mail, Phone, MessageSquare, Camera, Cpu, Bell, Lock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
 import './ParkeoYaLanding.css';
 
 const ParkeoYaLanding = () => {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedUserType, setSelectedUserType] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState('conductor');
@@ -10,206 +13,147 @@ const ParkeoYaLanding = () => {
   const features = [
     {
       icon: <Zap className="feature-icon-large" />,
-      title: "Disponibilidad en Tiempo Real",
-      description: "Sensores IoT detectan espacios libres al instante. Ahorra hasta 15 minutos por búsqueda."
+      title: t('features.realTime.title'),
+      description: t('features.realTime.description')
     },
     {
       icon: <MapPin className="feature-icon-large" />,
-      title: "Geolocalización Inteligente",
-      description: "Encuentra estacionamientos cercanos con distancias exactas y navegación integrada."
+      title: t('features.geolocation.title'),
+      description: t('features.geolocation.description')
     },
     {
       icon: <Shield className="feature-icon-large" />,
-      title: "Reserva Garantizada",
-      description: "Tu espacio confirmado por sensores. Sin sorpresas, sin dar vueltas."
+      title: t('features.guarantee.title'),
+      description: t('features.guarantee.description')
     },
     {
       icon: <TrendingUp className="feature-icon-large" />,
-      title: "Maximiza Ingresos",
-      description: "Para propietarios: aumenta ocupación hasta 20% con gestión automatizada."
+      title: t('features.revenue.title'),
+      description: t('features.revenue.description')
     }
   ];
 
   const detailedFeatures = [
     {
       icon: <Camera className="detailed-feature-icon" />,
-      title: "Sensores IoT Avanzados",
-      description: "Tecnología de detección en tiempo real con precisión del 99.9%. Cada espacio cuenta con sensores que comunican su estado instantáneamente."
+      title: t('detailedFeatures.sensors.title'),
+      description: t('detailedFeatures.sensors.description')
     },
     {
       icon: <Smartphone className="detailed-feature-icon" />,
-      title: "App Multiplataforma",
-      description: "Experiencia fluida en iOS, Android y Web. Sincronización automática entre todos tus dispositivos."
+      title: t('detailedFeatures.app.title'),
+      description: t('detailedFeatures.app.description')
     },
     {
       icon: <Bell className="detailed-feature-icon" />,
-      title: "Notificaciones Inteligentes",
-      description: "Alertas personalizables para vencimiento de reserva, nuevos espacios cercanos y promociones especiales."
+      title: t('detailedFeatures.notifications.title'),
+      description: t('detailedFeatures.notifications.description')
     },
     {
       icon: <Lock className="detailed-feature-icon" />,
-      title: "Pagos Seguros",
-      description: "Transacciones encriptadas con los más altos estándares de seguridad. Múltiples métodos de pago disponibles."
+      title: t('detailedFeatures.payments.title'),
+      description: t('detailedFeatures.payments.description')
     },
     {
       icon: <BarChart3 className="detailed-feature-icon" />,
-      title: "Analytics en Tiempo Real",
-      description: "Dashboard completo con métricas de ocupación, ingresos y tendencias. Reportes descargables en Excel."
+      title: t('detailedFeatures.analytics.title'),
+      description: t('detailedFeatures.analytics.description')
     },
     {
       icon: <Cpu className="detailed-feature-icon" />,
-      title: "Edge Computing",
-      description: "Procesamiento distribuido para respuestas instantáneas incluso sin conexión a internet."
+      title: t('detailedFeatures.edge.title'),
+      description: t('detailedFeatures.edge.description')
     }
   ];
 
-  const pricingPlans = {
+  const getPricingPlans = () => ({
     conductor: [
       {
-        name: "Básico",
-        price: "Gratis",
-        period: "siempre",
-        features: [
-          "Búsqueda ilimitada de estacionamientos",
-          "Reservas en tiempo real",
-          "Pago por uso (sin comisiones)",
-          "Historial de reservas",
-          "Soporte por email"
-        ],
+        name: t('pricing.conductor.basic.name'),
+        price: t('pricing.conductor.basic.price'),
+        period: t('pricing.conductor.basic.period'),
+        features: t('pricing.conductor.basic.features', { returnObjects: true }),
         recommended: false
       },
       {
-        name: "Premium",
-        price: "S/ 9.90",
-        period: "mes",
-        features: [
-          "Todo lo del plan Básico",
-          "Descuentos exclusivos (hasta 15%)",
-          "Reservas prioritarias",
-          "Sin anuncios",
-          "Soporte prioritario 24/7",
-          "Programa de fidelización"
-        ],
+        name: t('pricing.conductor.premium.name'),
+        price: t('pricing.conductor.premium.price'),
+        period: t('pricing.conductor.premium.period'),
+        features: t('pricing.conductor.premium.features', { returnObjects: true }),
         recommended: true
       }
     ],
     propietario: [
       {
-        name: "Starter",
-        price: "S/ 49",
-        period: "mes",
-        features: [
-          "Hasta 20 espacios",
-          "Comisión 5% por reserva",
-          "1 Edge Server incluido",
-          "Dashboard básico",
-          "Soporte por email",
-          "Sensores IoT (alquiler incluido)"
-        ],
+        name: t('pricing.propietario.starter.name'),
+        price: t('pricing.propietario.starter.price'),
+        period: t('pricing.propietario.starter.period'),
+        features: t('pricing.propietario.starter.features', { returnObjects: true }),
         recommended: false
       },
       {
-        name: "Business",
-        price: "S/ 149",
-        period: "mes",
-        features: [
-          "Hasta 100 espacios",
-          "Comisión 4% por reserva",
-          "3 Edge Servers incluidos",
-          "Analytics avanzado",
-          "Soporte prioritario",
-          "API access",
-          "Reportes personalizados"
-        ],
+        name: t('pricing.propietario.business.name'),
+        price: t('pricing.propietario.business.price'),
+        period: t('pricing.propietario.business.period'),
+        features: t('pricing.propietario.business.features', { returnObjects: true }),
         recommended: true
       },
       {
-        name: "Enterprise",
-        price: "Personalizado",
-        period: "",
-        features: [
-          "Espacios ilimitados",
-          "Comisión negociable",
-          "Infraestructura dedicada",
-          "Soporte 24/7 dedicado",
-          "Integración personalizada",
-          "SLA garantizado",
-          "Consultoría incluida"
-        ],
+        name: t('pricing.propietario.enterprise.name'),
+        price: t('pricing.propietario.enterprise.price'),
+        period: t('pricing.propietario.enterprise.period'),
+        features: t('pricing.propietario.enterprise.features', { returnObjects: true }),
         recommended: false
       }
     ]
-  };
+  });
 
-  const caseStudies = [
+  const getCaseStudies = () => [
     {
-      company: "Estacionamiento Centro",
-      location: "San Isidro, Lima",
+      company: t('caseStudies.companies.0.name'),
+      location: t('caseStudies.companies.0.location'),
       image: "🏢",
       results: {
         occupancy: "+25%",
         revenue: "+30%",
         time: "-40%"
       },
-      testimonial: "ParkeoYa transformó completamente nuestro negocio. La automatización nos permitió reducir personal y aumentar ingresos simultáneamente.",
-      owner: "Carlos Mendoza"
+      testimonial: t('caseStudies.companies.0.testimonial'),
+      owner: t('caseStudies.companies.0.owner')
     },
     {
-      company: "Plaza Mall Parking",
-      location: "Miraflores, Lima",
+      company: t('caseStudies.companies.1.name'),
+      location: t('caseStudies.companies.1.location'),
       image: "🏬",
       results: {
         occupancy: "+18%",
         revenue: "+22%",
         time: "-35%"
       },
-      testimonial: "Los clientes valoran muchísimo poder reservar antes de llegar. Hemos eliminado colas y mejorado la experiencia.",
-      owner: "María Torres"
+      testimonial: t('caseStudies.companies.1.testimonial'),
+      owner: t('caseStudies.companies.1.owner')
     },
     {
-      company: "Express Park",
-      location: "San Miguel, Lima",
+      company: t('caseStudies.companies.2.name'),
+      location: t('caseStudies.companies.2.location'),
       image: "🚗",
       results: {
         occupancy: "+30%",
         revenue: "+35%",
         time: "-45%"
       },
-      testimonial: "La inversión se recuperó en 4 meses. Los reportes en tiempo real nos ayudan a tomar mejores decisiones.",
-      owner: "Roberto Silva"
+      testimonial: t('caseStudies.companies.2.testimonial'),
+      owner: t('caseStudies.companies.2.owner')
     }
   ];
 
-  const conductorBenefits = [
-    "Encuentra estacionamiento en segundos",
-    "Reserva anticipada con código QR",
-    "Pago automático por tiempo real",
-    "Notificaciones de vencimiento",
-    "Historial y reseñas de estacionamientos"
-  ];
+  const getConductorBenefits = () => t('pricing.conductorBenefits', { returnObjects: true });
+  const getPropietarioBenefits = () => t('pricing.propietarioBenefits', { returnObjects: true });
 
-  const propietarioBenefits = [
-    "Panel de control con métricas en tiempo real",
-    "Gestión automatizada de espacios",
-    "Reportes de ingresos y ocupación",
-    "Comisión transparente del 5%",
-    "Instalación de sensores IoT incluida"
-  ];
-
-  const testimonials = [
-    {
-      name: "Joan Talizo",
-      role: "Conductor Urbano",
-      content: "Reduje 15 minutos de búsqueda diaria. La app es súper intuitiva y los sensores son precisos.",
-      rating: 5
-    },
-    {
-      name: "Rafael Soto",
-      role: "Propietario de Estacionamiento",
-      content: "Aumenté mi ocupación en 20% y automaticé todo. Los reportes son claros y detallados.",
-      rating: 5
-    }
-  ];
+  const getTestimonials = () => t('testimonials.items', { returnObjects: true }).map(item => ({
+    ...item,
+    rating: 5
+  }));
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -233,20 +177,21 @@ const ParkeoYaLanding = () => {
 
             {/* Desktop Menu */}
             <div className="nav-menu">
-              <button onClick={() => scrollToSection('inicio')} className="nav-button">Inicio</button>
-              <button onClick={() => scrollToSection('sobre-nosotros')} className="nav-button">Sobre Nosotros</button>
-              <button onClick={() => scrollToSection('caracteristicas')} className="nav-button">Características</button>
-              <button onClick={() => scrollToSection('precios')} className="nav-button">Precios</button>
-              <button onClick={() => scrollToSection('casos-exito')} className="nav-button">Casos de Éxito</button>
-              <button onClick={() => scrollToSection('contacto')} className="nav-button">Contacto</button>
+              <button onClick={() => scrollToSection('inicio')} className="nav-button">{t('nav.inicio')}</button>
+              <button onClick={() => scrollToSection('sobre-nosotros')} className="nav-button">{t('nav.sobreNosotros')}</button>
+              <button onClick={() => scrollToSection('caracteristicas')} className="nav-button">{t('nav.caracteristicas')}</button>
+              <button onClick={() => scrollToSection('precios')} className="nav-button">{t('nav.precios')}</button>
+              <button onClick={() => scrollToSection('casos-exito')} className="nav-button">{t('nav.casosExito')}</button>
+              <button onClick={() => scrollToSection('contacto')} className="nav-button">{t('nav.contacto')}</button>
             </div>
 
             <div className="nav-actions">
+              <LanguageSelector />
               <button className="btn-outline">
-                Iniciar Sesión
+                {t('nav.iniciarSesion')}
               </button>
               <button className="btn-primary">
-                Registrarse
+                {t('nav.registrarse')}
               </button>
             </div>
 
@@ -264,15 +209,16 @@ const ParkeoYaLanding = () => {
         {mobileMenuOpen && (
           <div className="mobile-menu">
             <div className="mobile-menu-content">
-              <button onClick={() => scrollToSection('inicio')} className="mobile-menu-item">Inicio</button>
-              <button onClick={() => scrollToSection('sobre-nosotros')} className="mobile-menu-item">Sobre Nosotros</button>
-              <button onClick={() => scrollToSection('caracteristicas')} className="mobile-menu-item">Características</button>
-              <button onClick={() => scrollToSection('precios')} className="mobile-menu-item">Precios</button>
-              <button onClick={() => scrollToSection('casos-exito')} className="mobile-menu-item">Casos de Éxito</button>
-              <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item">Contacto</button>
+              <button onClick={() => scrollToSection('inicio')} className="mobile-menu-item">{t('nav.inicio')}</button>
+              <button onClick={() => scrollToSection('sobre-nosotros')} className="mobile-menu-item">{t('nav.sobreNosotros')}</button>
+              <button onClick={() => scrollToSection('caracteristicas')} className="mobile-menu-item">{t('nav.caracteristicas')}</button>
+              <button onClick={() => scrollToSection('precios')} className="mobile-menu-item">{t('nav.precios')}</button>
+              <button onClick={() => scrollToSection('casos-exito')} className="mobile-menu-item">{t('nav.casosExito')}</button>
+              <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item">{t('nav.contacto')}</button>
               <div className="mobile-menu-actions">
-                <button className="btn-outline">Iniciar Sesión</button>
-                <button className="btn-primary">Registrarse</button>
+                <LanguageSelector />
+                <button className="btn-outline">{t('nav.iniciarSesion')}</button>
+                <button className="btn-primary">{t('nav.registrarse')}</button>
               </div>
             </div>
           </div>
@@ -285,17 +231,16 @@ const ParkeoYaLanding = () => {
           <div className="hero-grid">
             <div className="hero-content">
               <div className="hero-badge">
-                Tecnología IoT para Movilidad Urbana
+                {t('hero.badge')}
               </div>
               <h1 className="hero-title">
-                Encuentra Estacionamiento 
+                {t('hero.title')}
                 <span className="hero-title-gradient">
-                  en Tiempo Real
+                  {t('hero.titleGradient')}
                 </span>
               </h1>
               <p className="hero-description">
-                Sensores IoT detectan disponibilidad al instante. Reserva, paga y estaciona sin dar vueltas. 
-                Optimiza tu tiempo y tus ingresos.
+                {t('hero.description')}
               </p>
               <div className="hero-actions">
                 <button 
@@ -306,7 +251,7 @@ const ParkeoYaLanding = () => {
                   className="btn-hero-primary"
                 >
                   <Users />
-                  <span>Soy Conductor</span>
+                  <span>{t('hero.conductorBtn')}</span>
                 </button>
                 <button 
                   onClick={() => {
@@ -316,21 +261,21 @@ const ParkeoYaLanding = () => {
                   className="btn-hero-secondary"
                 >
                   <TrendingUp />
-                  <span>Soy Propietario</span>
+                  <span>{t('hero.propietarioBtn')}</span>
                 </button>
               </div>
               <div className="hero-stats">
                 <div className="hero-stat">
                   <div className="hero-stat-number">30%</div>
-                  <div className="hero-stat-label">Menos tiempo de búsqueda</div>
+                  <div className="hero-stat-label">{t('hero.stats.searchTime')}</div>
                 </div>
                 <div className="hero-stat">
                   <div className="hero-stat-number">15%</div>
-                  <div className="hero-stat-label">Reducción de CO₂</div>
+                  <div className="hero-stat-label">{t('hero.stats.co2Reduction')}</div>
                 </div>
                 <div className="hero-stat">
                   <div className="hero-stat-number">20%</div>
-                  <div className="hero-stat-label">Más ocupación</div>
+                  <div className="hero-stat-label">{t('hero.stats.occupancy')}</div>
                 </div>
               </div>
             </div>
@@ -339,7 +284,7 @@ const ParkeoYaLanding = () => {
               <div className="hero-demo-card">
                 <div className="demo-status">
                   <div className="demo-status-dot"></div>
-                  <span className="demo-status-text">3 espacios disponibles cerca de ti</span>
+                  <span className="demo-status-text">3 {t('hero.demoStatus')}</span>
                 </div>
                 <div className="demo-parking-list">
                   {['Estacionamiento Centro', 'Plaza San Isidro', 'Parqueo Express'].map((name, i) => (
@@ -352,7 +297,7 @@ const ParkeoYaLanding = () => {
                         </div>
                       </div>
                       <button className="demo-reserve-btn">
-                        Reservar
+                        {t('hero.reserveBtn')}
                       </button>
                     </div>
                   ))}
@@ -367,8 +312,8 @@ const ParkeoYaLanding = () => {
       <section id="como-funciona" className="section section-alt">
         <div className="section-container">
           <div className="section-header">
-            <h2 className="section-title">Tecnología IoT que Funciona</h2>
-            <p className="section-description">Sensores inteligentes para una experiencia sin fricciones</p>
+            <h2 className="section-title">{t('features.title')}</h2>
+            <p className="section-description">{t('features.subtitle')}</p>
           </div>
           <div className="feature-grid">
             {features.map((feature, index) => (
@@ -387,34 +332,34 @@ const ParkeoYaLanding = () => {
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Quiénes Somos
+              {t('about.badge')}
             </div>
-            <h2 className="section-title">Revolucionando la Movilidad Urbana</h2>
+            <h2 className="section-title">{t('about.title')}</h2>
             <p className="section-description">
-              Somos Lorem-Ipsum-UPC, un equipo de estudiantes de Ingeniería de Software de la UPC comprometidos con crear soluciones tecnológicas que mejoren la calidad de vida en las ciudades.
+              {t('about.description')}
             </p>
           </div>
 
           <div className="about-values-grid">
             <div className="value-card">
               <Target className="value-icon" />
-              <h3 className="value-title">Misión</h3>
+              <h3 className="value-title">{t('about.mission.title')}</h3>
               <p className="value-description">
-                Revolucionar la experiencia de aparcamiento conectando a conductores y administradores mediante una plataforma inteligente que optimice el uso del espacio y reduzca tiempos de búsqueda.
+                {t('about.mission.description')}
               </p>
             </div>
             <div className="value-card">
               <Award className="value-icon" />
-              <h3 className="value-title">Visión</h3>
+              <h3 className="value-title">{t('about.vision.title')}</h3>
               <p className="value-description">
-                Consolidarnos como la startup líder en soluciones de gestión de estacionamientos a nivel nacional, aportando a la movilidad eficiente mediante tecnología innovadora y sostenible.
+                {t('about.vision.description')}
               </p>
             </div>
             <div className="value-card">
               <Globe className="value-icon" />
-              <h3 className="value-title">Valores</h3>
+              <h3 className="value-title">{t('about.values.title')}</h3>
               <p className="value-description">
-                Innovación, transparencia, sostenibilidad y compromiso con la mejora continua. Priorizamos la experiencia del usuario y el impacto positivo en el medio ambiente.
+                {t('about.values.description')}
               </p>
             </div>
           </div>
@@ -422,41 +367,31 @@ const ParkeoYaLanding = () => {
           <div className="problem-section">
             <div className="problem-grid">
               <div>
-                <h3 className="problem-title">El Problema que Resolvemos</h3>
+                <h3 className="problem-title">{t('about.problem.title')}</h3>
                 <p className="problem-description">
-                  En Lima, más de 100,000 vehículos se suman al parque automotor cada año. Los conductores pierden hasta 20 minutos buscando estacionamiento en horas pico, generando:
+                  {t('about.problem.description')}
                 </p>
                 <ul className="problem-list">
-                  <li className="problem-item">
-                    <CheckCircle className="problem-check" />
-                    <span>60% del tráfico en zonas céntricas por búsqueda de parking</span>
-                  </li>
-                  <li className="problem-item">
-                    <CheckCircle className="problem-check" />
-                    <span>Aumento de emisiones de CO₂ y contaminación</span>
-                  </li>
-                  <li className="problem-item">
-                    <CheckCircle className="problem-check" />
-                    <span>Estrés y frustración en conductores diarios</span>
-                  </li>
-                  <li className="problem-item">
-                    <CheckCircle className="problem-check" />
-                    <span>Baja rentabilidad para propietarios de playas</span>
-                  </li>
+                  {t('about.problem.items', { returnObjects: true }).map((item, index) => (
+                    <li key={index} className="problem-item">
+                      <CheckCircle className="problem-check" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="problem-stats">
                 <div className="problem-stat-card">
                   <div className="problem-stat-number">100,000+</div>
-                  <div className="problem-stat-label">Vehículos nuevos por año en Lima</div>
+                  <div className="problem-stat-label">{t('about.problem.stats.vehicles')}</div>
                 </div>
                 <div className="problem-stat-card">
                   <div className="problem-stat-number">20 min</div>
-                  <div className="problem-stat-label">Tiempo promedio de búsqueda</div>
+                  <div className="problem-stat-label">{t('about.problem.stats.time')}</div>
                 </div>
                 <div className="problem-stat-card">
                   <div className="problem-stat-number">60%</div>
-                  <div className="problem-stat-label">Del tráfico busca estacionamiento</div>
+                  <div className="problem-stat-label">{t('about.problem.stats.traffic')}</div>
                 </div>
               </div>
             </div>
@@ -469,11 +404,11 @@ const ParkeoYaLanding = () => {
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Características
+              {t('detailedFeatures.badge')}
             </div>
-            <h2 className="section-title">Tecnología de Vanguardia</h2>
+            <h2 className="section-title">{t('detailedFeatures.title')}</h2>
             <p className="section-description">
-              Integramos las últimas innovaciones en IoT, edge computing y aplicaciones móviles para ofrecerte la mejor experiencia.
+              {t('detailedFeatures.subtitle')}
             </p>
           </div>
 
@@ -488,26 +423,26 @@ const ParkeoYaLanding = () => {
           </div>
 
           <div className="tech-process">
-            <h3 className="tech-process-title">¿Cómo Funciona la Tecnología IoT?</h3>
+            <h3 className="tech-process-title">{t('detailedFeatures.processTitle')}</h3>
             <p className="tech-process-description">
-              Cada espacio de estacionamiento cuenta con sensores que detectan la presencia de vehículos. Los datos se procesan en edge servers locales y se sincronizan con la nube en tiempo real, permitiendo actualizaciones instantáneas en la aplicación.
+              {t('detailedFeatures.processDescription')}
             </p>
             <div className="tech-process-steps">
               <div className="tech-step">
                 <div className="tech-step-number">1</div>
-                <div className="tech-step-label">Sensor detecta vehículo</div>
+                <div className="tech-step-label">{t('detailedFeatures.processSteps.detect')}</div>
               </div>
               <div className="tech-step">
                 <div className="tech-step-number">2</div>
-                <div className="tech-step-label">Edge server procesa</div>
+                <div className="tech-step-label">{t('detailedFeatures.processSteps.process')}</div>
               </div>
               <div className="tech-step">
                 <div className="tech-step-number">3</div>
-                <div className="tech-step-label">Cloud sincroniza</div>
+                <div className="tech-step-label">{t('detailedFeatures.processSteps.sync')}</div>
               </div>
               <div className="tech-step">
                 <div className="tech-step-number">4</div>
-                <div className="tech-step-label">App actualiza</div>
+                <div className="tech-step-label">{t('detailedFeatures.processSteps.update')}</div>
               </div>
             </div>
           </div>
@@ -519,37 +454,37 @@ const ParkeoYaLanding = () => {
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Precios
+              {t('pricing.badge')}
             </div>
-            <h2 className="section-title">Planes para Todos</h2>
+            <h2 className="section-title">{t('pricing.title')}</h2>
             <p className="section-description">
-              Elige el plan que mejor se adapte a tus necesidades
+              {t('pricing.subtitle')}
             </p>
             <div className="pricing-toggle">
               <button
                 onClick={() => setSelectedPlan('conductor')}
                 className={`pricing-toggle-btn ${selectedPlan === 'conductor' ? 'active' : ''}`}
               >
-                Para Conductores
+                {t('pricing.conductorTab')}
               </button>
               <button
                 onClick={() => setSelectedPlan('propietario')}
                 className={`pricing-toggle-btn ${selectedPlan === 'propietario' ? 'active' : ''}`}
               >
-                Para Propietarios
+                {t('pricing.propietarioTab')}
               </button>
             </div>
           </div>
 
           <div className="pricing-grid" data-plan={selectedPlan}>
-            {pricingPlans[selectedPlan].map((plan, index) => (
+            {getPricingPlans()[selectedPlan].map((plan, index) => (
               <div
                 key={index}
                 className={`pricing-card ${plan.recommended ? 'recommended' : ''}`}
               >
                 {plan.recommended && (
                   <div className="pricing-recommended-badge">
-                    Recomendado
+                    {t('pricing.recommended')}
                   </div>
                 )}
                 <div className="pricing-header">
@@ -570,7 +505,7 @@ const ParkeoYaLanding = () => {
                 <button
                   className={`pricing-cta ${plan.recommended ? 'primary' : 'secondary'}`}
                 >
-                  {plan.name === 'Enterprise' ? 'Contactar Ventas' : 'Comenzar Ahora'}
+                  {plan.name === t('pricing.propietario.enterprise.name') ? t('pricing.contactBtn') : t('pricing.selectBtn')}
                 </button>
               </div>
             ))}
@@ -602,7 +537,7 @@ const ParkeoYaLanding = () => {
           </div>
 
           <div className="case-studies-grid">
-            {caseStudies.map((study, index) => (
+            {getCaseStudies().map((study, index) => (
               <div key={index} className="case-study-card">
                 <div className="case-study-image">{study.image}</div>
                 <h3 className="case-study-title">{study.company}</h3>
@@ -676,7 +611,7 @@ const ParkeoYaLanding = () => {
                 Olvídate de dar vueltas. Con ParkeoYa, encuentras y reservas tu espacio en segundos.
               </p>
               <div className="user-benefits">
-                {conductorBenefits.map((benefit, index) => (
+                {getConductorBenefits().map((benefit, index) => (
                   <div key={index} className="user-benefit">
                     <CheckCircle className="user-benefit-icon" />
                     <span className="user-benefit-text">{benefit}</span>
@@ -751,7 +686,7 @@ const ParkeoYaLanding = () => {
                 Automatiza la gestión, aumenta ocupación y genera ingresos pasivos con nuestra plataforma.
               </p>
               <div className="user-benefits">
-                {propietarioBenefits.map((benefit, index) => (
+                {getPropietarioBenefits().map((benefit, index) => (
                   <div key={index} className="user-benefit">
                     <CheckCircle className="user-benefit-icon" />
                     <span className="user-benefit-text">{benefit}</span>
@@ -776,7 +711,7 @@ const ParkeoYaLanding = () => {
             <p className="section-description">Experiencias reales, resultados medibles</p>
           </div>
           <div className="testimonials-grid">
-            {testimonials.map((testimonial, index) => (
+            {getTestimonials().map((testimonial, index) => (
               <div key={index} className="testimonial-card">
                 <div className="testimonial-rating">
                   {[...Array(testimonial.rating)].map((_, i) => (
