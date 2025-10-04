@@ -189,7 +189,7 @@
   align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1155px) {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -197,6 +197,7 @@
 
 .hero-content {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 1.5rem;
 }
@@ -574,7 +575,7 @@
 .problem-description {
   font-size: 1.125rem;
   color: #d1d5db;
-  margin-bottom: 1rem;
+  margin-bottom: 2em;
 }
 
 .problem-list {
@@ -775,39 +776,69 @@
   }
 }
 
-/* Tablet - Grid siempre de 3 columnas */
+/* Tablet */
 @media (min-width: 768px) {
   .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1000px;
     justify-items: center;
+  }
+  
+  /* Para conductores - 2 columnas centradas */
+  .pricing-grid[data-plan="conductor"] {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+  
+  /* Para propietarios - 3 columnas */
+  .pricing-grid[data-plan="propietario"] {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
   }
   
   /* Ajustes específicos para cada plan */
   .pricing-grid .pricing-card {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
   }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
   .pricing-grid {
+    gap: 2.5rem;
+  }
+  
+  /* Para conductores - 2 columnas centradas */
+  .pricing-grid[data-plan="conductor"] {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+  
+  /* Para propietarios - 3 columnas */
+  .pricing-grid[data-plan="propietario"] {
+    grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
-    gap: 2rem;
   }
   
   .pricing-grid .pricing-card {
-    max-width: 350px;
+    max-width: 360px;
   }
 }
 
 /* Desktop extra grande */
 @media (min-width: 1200px) {
   .pricing-grid {
+    gap: 3rem;
+  }
+  
+  /* Para conductores - 2 columnas centradas */
+  .pricing-grid[data-plan="conductor"] {
+    max-width: 900px;
+  }
+  
+  /* Para propietarios - 3 columnas */
+  .pricing-grid[data-plan="propietario"] {
     max-width: 1400px;
-    gap: 2.5rem;
   }
 }
 
@@ -938,6 +969,12 @@
   align-items: center;
   gap: 0.5rem;
   transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .pricing-contact-link:hover {
@@ -1049,7 +1086,6 @@
 
 .case-study-results {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
@@ -1260,23 +1296,11 @@
 }
 
 .case-study-summary-number {
-  font-size: 2.25rem;
+  font-size: 2.50rem;
   font-weight: 700;
   color: #22d3ee;
   margin-bottom: 0.5rem;
   line-height: 1;
-}
-
-@media (min-width: 480px) {
-  .case-study-summary-number {
-    font-size: 2.75rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .case-study-summary-number {
-    font-size: 3rem;
-  }
 }
 
 .case-study-summary-label {
@@ -1440,13 +1464,12 @@
 
 .testimonial-author {
   display: flex;
-  align-items: center;
   gap: 1rem;
 }
 
 .testimonial-avatar {
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 55px;
   background: linear-gradient(135deg, #22d3ee, #3b82f6);
   border-radius: 50%;
   display: flex;
@@ -1459,6 +1482,9 @@
 .testimonial-author-info {
   display: flex;
   flex-direction: column;
+  align-content: start;
+  text-align: start;
+  gap: 4px;
 }
 
 .testimonial-author-name {
@@ -1485,6 +1511,7 @@
 .contact-info {
   display: flex;
   flex-direction: column;
+  align-self: anchor-center;
 }
 
 .contact-title {
@@ -1786,6 +1813,7 @@
 .footer-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .footer-logo-section {
@@ -1833,6 +1861,12 @@
   color: #9ca3af;
   text-decoration: none;
   transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .footer-link:hover {

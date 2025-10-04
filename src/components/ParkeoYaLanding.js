@@ -725,12 +725,6 @@ const ParkeoYaLanding = () => {
           <div className="testimonials-grid">
             {getTestimonials().map((testimonial, index) => (
               <div key={index} className="testimonial-card">
-                <div className="testimonial-rating">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="testimonial-star" />
-                  ))}
-                </div>
-                <p className="testimonial-content">{testimonial.content}</p>
                 <div className="testimonial-author">
                   <div className="testimonial-avatar">
                     {testimonial.name[0]}
@@ -738,8 +732,14 @@ const ParkeoYaLanding = () => {
                   <div className="testimonial-author-info">
                     <div className="testimonial-author-name">{testimonial.name}</div>
                     <div className="testimonial-author-role">{testimonial.role}</div>
+                    <div className="testimonial-rating">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="testimonial-star" />
+                      ))}
+                    </div>
                   </div>
                 </div>
+                <p className="testimonial-content">{testimonial.content}</p>
               </div>
             ))}
           </div>
@@ -907,25 +907,25 @@ const ParkeoYaLanding = () => {
             <div className="footer-section">
               <h3 className="footer-title">{t('footer.sections.product', 'Producto')}</h3>
               <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('caracteristicas')} className="footer-link">{t('footer.links.features', 'Características')}</button></li>
-                <li><button onClick={() => scrollToSection('precios')} className="footer-link">{t('footer.links.pricing', 'Precios')}</button></li>
-                <li><button onClick={() => scrollToSection('casos-exito')} className="footer-link">{t('footer.links.caseStudies', 'Casos de Éxito')}</button></li>
+                <ul><button onClick={() => scrollToSection('caracteristicas')} className="footer-link">{t('footer.links.features', 'Características')}</button></ul>
+                <ul><button onClick={() => scrollToSection('precios')} className="footer-link">{t('footer.links.pricing', 'Precios')}</button></ul>
+                <ul><button onClick={() => scrollToSection('casos-exito')} className="footer-link">{t('footer.links.caseStudies', 'Casos de Éxito')}</button></ul>
               </ul>
             </div>
             <div className="footer-section">
               <h3 className="footer-title">{t('footer.sections.support', 'Soporte')}</h3>
               <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">{t('footer.links.help', 'Centro de Ayuda')}</button></li>
-                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">{t('footer.links.contact', 'Contacto')}</button></li>
-                <li><button className="footer-link">{t('footer.links.faq', 'FAQ')}</button></li>
+                <ul><button onClick={() => scrollToSection('contacto')} className="footer-link">{t('footer.links.help', 'Centro de Ayuda')}</button></ul>
+                <ul><button onClick={() => scrollToSection('contacto')} className="footer-link">{t('footer.links.contact', 'Contacto')}</button></ul>
+                <ul><button className="footer-link">{t('footer.links.faq', 'FAQ')}</button></ul>
               </ul>
             </div>
             <div className="footer-section">
               <h3 className="footer-title">{t('footer.sections.company', 'Empresa')}</h3>
               <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('sobre-nosotros')} className="footer-link">{t('footer.links.about', 'Sobre Nosotros')}</button></li>
-                <li><button className="footer-link">{t('footer.links.blog', 'Blog')}</button></li>
-                <li><button className="footer-link">{t('footer.links.careers', 'Trabaja con Nosotros')}</button></li>
+                <ul><button onClick={() => scrollToSection('sobre-nosotros')} className="footer-link">{t('footer.links.about', 'Sobre Nosotros')}</button></ul>
+                <ul><button className="footer-link">{t('footer.links.blog', 'Blog')}</button></ul>
+                <ul><button className="footer-link">{t('footer.links.careers', 'Trabaja con Nosotros')}</button></ul>
               </ul>
             </div>
           </div>

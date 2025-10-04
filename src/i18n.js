@@ -3,42 +3,35 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 
-// Configuración de i18next
 i18n
-  .use(HttpApi) // Carga traducciones desde archivos JSON
-  .use(LanguageDetector) // Detecta idioma del navegador
-  .use(initReactI18next) // Pasa la instancia i18n a react-i18next
+  .use(HttpApi) 
+  .use(LanguageDetector) 
+  .use(initReactI18next) 
   .init({
-    // Configuración por defecto
-    lng: 'es', // Idioma por defecto
-    fallbackLng: 'es', // Idioma de respaldo
-    debug: process.env.NODE_ENV === 'development', // Debug solo en desarrollo
+    lng: 'es', 
+    fallbackLng: 'es', 
+    debug: process.env.NODE_ENV === 'development',
 
-    // Configuración de detección de idioma
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
     },
 
-    // Configuración de backend (carga de archivos)
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
 
-    // Configuración de namespaces
     defaultNS: 'translation',
     ns: ['translation'],
 
     interpolation: {
-      escapeValue: false, // React ya escapa por defecto
+      escapeValue: false, 
     },
 
-    // Configuración de React
     react: {
-      useSuspense: false, // Deshabilitamos Suspense para evitar problemas
+      useSuspense: false,
     },
 
-    // Idiomas soportados
     supportedLngs: ['es', 'en'],
     nonExplicitSupportedLngs: true,
   });
