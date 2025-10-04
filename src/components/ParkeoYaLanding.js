@@ -5,7 +5,7 @@ import LanguageSelector from './LanguageSelector';
 import './ParkeoYaLanding.css';
 
 const ParkeoYaLanding = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedUserType, setSelectedUserType] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState('conductor');
@@ -160,6 +160,18 @@ const ParkeoYaLanding = () => {
     setMobileMenuOpen(false);
   };
 
+  // Si no está listo i18n, mostrar loading
+  if (!i18n.isInitialized) {
+    return (
+      <div style={{ padding: '20px', textAlign: 'center', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div>
+          <h1>Cargando traducciones...</h1>
+          <p>Please wait while we load the translations...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="landing-container">
       {/* Navigation */}
@@ -177,21 +189,21 @@ const ParkeoYaLanding = () => {
 
             {/* Desktop Menu */}
             <div className="nav-menu">
-              <button onClick={() => scrollToSection('inicio')} className="nav-button">{t('nav.inicio')}</button>
-              <button onClick={() => scrollToSection('sobre-nosotros')} className="nav-button">{t('nav.sobreNosotros')}</button>
-              <button onClick={() => scrollToSection('caracteristicas')} className="nav-button">{t('nav.caracteristicas')}</button>
-              <button onClick={() => scrollToSection('precios')} className="nav-button">{t('nav.precios')}</button>
-              <button onClick={() => scrollToSection('casos-exito')} className="nav-button">{t('nav.casosExito')}</button>
-              <button onClick={() => scrollToSection('contacto')} className="nav-button">{t('nav.contacto')}</button>
+              <button onClick={() => scrollToSection('inicio')} className="nav-button">{t('nav.inicio', 'Inicio')}</button>
+              <button onClick={() => scrollToSection('sobre-nosotros')} className="nav-button">{t('nav.sobreNosotros', 'Sobre Nosotros')}</button>
+              <button onClick={() => scrollToSection('caracteristicas')} className="nav-button">{t('nav.caracteristicas', 'Características')}</button>
+              <button onClick={() => scrollToSection('precios')} className="nav-button">{t('nav.precios', 'Precios')}</button>
+              <button onClick={() => scrollToSection('casos-exito')} className="nav-button">{t('nav.casosExito', 'Casos de Éxito')}</button>
+              <button onClick={() => scrollToSection('contacto')} className="nav-button">{t('nav.contacto', 'Contacto')}</button>
             </div>
 
             <div className="nav-actions">
               <LanguageSelector />
               <button className="btn-outline">
-                {t('nav.iniciarSesion')}
+                {t('nav.iniciarSesion', 'Iniciar Sesión')}
               </button>
               <button className="btn-primary">
-                {t('nav.registrarse')}
+                {t('nav.registrarse', 'Registrarse')}
               </button>
             </div>
 
@@ -209,16 +221,16 @@ const ParkeoYaLanding = () => {
         {mobileMenuOpen && (
           <div className="mobile-menu">
             <div className="mobile-menu-content">
-              <button onClick={() => scrollToSection('inicio')} className="mobile-menu-item">{t('nav.inicio')}</button>
-              <button onClick={() => scrollToSection('sobre-nosotros')} className="mobile-menu-item">{t('nav.sobreNosotros')}</button>
-              <button onClick={() => scrollToSection('caracteristicas')} className="mobile-menu-item">{t('nav.caracteristicas')}</button>
-              <button onClick={() => scrollToSection('precios')} className="mobile-menu-item">{t('nav.precios')}</button>
-              <button onClick={() => scrollToSection('casos-exito')} className="mobile-menu-item">{t('nav.casosExito')}</button>
-              <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item">{t('nav.contacto')}</button>
+              <button onClick={() => scrollToSection('inicio')} className="mobile-menu-item">{t('nav.inicio', 'Inicio')}</button>
+              <button onClick={() => scrollToSection('sobre-nosotros')} className="mobile-menu-item">{t('nav.sobreNosotros', 'Sobre Nosotros')}</button>
+              <button onClick={() => scrollToSection('caracteristicas')} className="mobile-menu-item">{t('nav.caracteristicas', 'Características')}</button>
+              <button onClick={() => scrollToSection('precios')} className="mobile-menu-item">{t('nav.precios', 'Precios')}</button>
+              <button onClick={() => scrollToSection('casos-exito')} className="mobile-menu-item">{t('nav.casosExito', 'Casos de Éxito')}</button>
+              <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item">{t('nav.contacto', 'Contacto')}</button>
               <div className="mobile-menu-actions">
                 <LanguageSelector />
-                <button className="btn-outline">{t('nav.iniciarSesion')}</button>
-                <button className="btn-primary">{t('nav.registrarse')}</button>
+                <button className="btn-outline">{t('nav.iniciarSesion', 'Iniciar Sesión')}</button>
+                <button className="btn-primary">{t('nav.registrarse', 'Registrarse')}</button>
               </div>
             </div>
           </div>
@@ -231,16 +243,16 @@ const ParkeoYaLanding = () => {
           <div className="hero-grid">
             <div className="hero-content">
               <div className="hero-badge">
-                {t('hero.badge')}
+                {t('hero.badge', 'Tecnología IoT para Movilidad Urbana')}
               </div>
               <h1 className="hero-title">
-                {t('hero.title')}
+                {t('hero.title', 'Encuentra Estacionamiento ')}
                 <span className="hero-title-gradient">
-                  {t('hero.titleGradient')}
+                  {t('hero.titleGradient', 'en Tiempo Real')}
                 </span>
               </h1>
               <p className="hero-description">
-                {t('hero.description')}
+                {t('hero.description', 'Sensores IoT detectan disponibilidad al instante. Reserva, paga y estaciona sin dar vueltas. Optimiza tu tiempo y tus ingresos.')}
               </p>
               <div className="hero-actions">
                 <button 
@@ -251,7 +263,7 @@ const ParkeoYaLanding = () => {
                   className="btn-hero-primary"
                 >
                   <Users />
-                  <span>{t('hero.conductorBtn')}</span>
+                  <span>{t('hero.conductorBtn', 'Soy Conductor')}</span>
                 </button>
                 <button 
                   onClick={() => {
@@ -261,21 +273,21 @@ const ParkeoYaLanding = () => {
                   className="btn-hero-secondary"
                 >
                   <TrendingUp />
-                  <span>{t('hero.propietarioBtn')}</span>
+                  <span>{t('hero.propietarioBtn', 'Soy Propietario')}</span>
                 </button>
               </div>
               <div className="hero-stats">
                 <div className="hero-stat">
                   <div className="hero-stat-number">30%</div>
-                  <div className="hero-stat-label">{t('hero.stats.searchTime')}</div>
+                  <div className="hero-stat-label">{t('hero.stats.searchTime', 'Menos tiempo de búsqueda')}</div>
                 </div>
                 <div className="hero-stat">
                   <div className="hero-stat-number">15%</div>
-                  <div className="hero-stat-label">{t('hero.stats.co2Reduction')}</div>
+                  <div className="hero-stat-label">{t('hero.stats.co2Reduction', 'Reducción de CO₂')}</div>
                 </div>
                 <div className="hero-stat">
                   <div className="hero-stat-number">20%</div>
-                  <div className="hero-stat-label">{t('hero.stats.occupancy')}</div>
+                  <div className="hero-stat-label">{t('hero.stats.occupancy', 'Más ocupación')}</div>
                 </div>
               </div>
             </div>
@@ -284,7 +296,7 @@ const ParkeoYaLanding = () => {
               <div className="hero-demo-card">
                 <div className="demo-status">
                   <div className="demo-status-dot"></div>
-                  <span className="demo-status-text">3 {t('hero.demoStatus')}</span>
+                  <span className="demo-status-text">3 {t('hero.demoStatus', 'espacios disponibles cerca de ti')}</span>
                 </div>
                 <div className="demo-parking-list">
                   {['Estacionamiento Centro', 'Plaza San Isidro', 'Parqueo Express'].map((name, i) => (
@@ -297,7 +309,7 @@ const ParkeoYaLanding = () => {
                         </div>
                       </div>
                       <button className="demo-reserve-btn">
-                        {t('hero.reserveBtn')}
+                        {t('hero.reserveBtn', 'Reservar')}
                       </button>
                     </div>
                   ))}
@@ -513,10 +525,10 @@ const ParkeoYaLanding = () => {
 
           <div className="pricing-footer">
             <p className="pricing-footer-text">
-              ¿Necesitas un plan personalizado? Contáctanos para obtener una cotización especial.
+              {t('pricingFooter.question', '¿Necesitas un plan personalizado? Contáctanos para obtener una cotización especial.')}
             </p>
             <button className="pricing-contact-link">
-              <span>Hablar con Ventas</span>
+              <span>{t('pricingFooter.contactSales', 'Hablar con Ventas')}</span>
               <ChevronRight />
             </button>
           </div>
@@ -528,11 +540,11 @@ const ParkeoYaLanding = () => {
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Casos de Éxito
+              {t('caseStudiesSummary.title', 'Casos de Éxito')}
             </div>
-            <h2 className="section-title">Resultados Comprobados</h2>
+            <h2 className="section-title">{t('caseStudiesSummary.title', 'Resultados Comprobados')}</h2>
             <p className="section-description">
-              Descubre cómo ParkeoYa ha transformado negocios reales
+              {t('caseStudiesSummary.subtitle', 'Descubre cómo ParkeoYa ha transformado negocios reales')}
             </p>
           </div>
 
@@ -574,23 +586,23 @@ const ParkeoYaLanding = () => {
 
           <div className="case-study-summary">
             <div className="text-center">
-              <h3 className="case-study-summary-title">Resultados Promedio de Nuestros Clientes</h3>
+              <h3 className="case-study-summary-title">{t('caseStudiesSummary.summaryTitle', 'Resultados Promedio de Nuestros Clientes')}</h3>
               <div className="case-study-summary-stats">
                 <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">+24%</div>
-                  <div className="case-study-summary-label">Aumento en Ocupación</div>
+                  <div className="case-study-summary-number">{t('caseStudiesSummary.values.occupancyIncrease', '+24%')}</div>
+                  <div className="case-study-summary-label">{t('caseStudiesSummary.metrics.occupancyIncrease', 'Aumento en Ocupación')}</div>
                 </div>
                 <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">+29%</div>
-                  <div className="case-study-summary-label">Crecimiento en Ingresos</div>
+                  <div className="case-study-summary-number">{t('caseStudiesSummary.values.revenueGrowth', '+29%')}</div>
+                  <div className="case-study-summary-label">{t('caseStudiesSummary.metrics.revenueGrowth', 'Crecimiento en Ingresos')}</div>
                 </div>
                 <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">-40%</div>
-                  <div className="case-study-summary-label">Reducción de Tiempo</div>
+                  <div className="case-study-summary-number">{t('caseStudiesSummary.values.timeReduction', '-40%')}</div>
+                  <div className="case-study-summary-label">{t('caseStudiesSummary.metrics.timeReduction', 'Reducción de Tiempo')}</div>
                 </div>
                 <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">4 meses</div>
-                  <div className="case-study-summary-label">ROI Promedio</div>
+                  <div className="case-study-summary-number">{t('caseStudiesSummary.values.avgROI', '4 meses')}</div>
+                  <div className="case-study-summary-label">{t('caseStudiesSummary.metrics.avgROI', 'ROI Promedio')}</div>
                 </div>
               </div>
             </div>
@@ -604,11 +616,11 @@ const ParkeoYaLanding = () => {
           <div className="user-section-grid">
             <div className="user-section-content">
               <div className="section-badge">
-                Para Conductores
+                {t('conductors.badge', 'Para Conductores')}
               </div>
-              <h2 className="user-section-title">Estaciona Inteligente, Ahorra Tiempo</h2>
+              <h2 className="user-section-title">{t('conductors.title', 'Estaciona Inteligente, Ahorra Tiempo')}</h2>
               <p className="user-section-description">
-                Olvídate de dar vueltas. Con ParkeoYa, encuentras y reservas tu espacio en segundos.
+                {t('conductors.description', 'Olvídate de dar vueltas. Con ParkeoYa, encuentras y reservas tu espacio en segundos.')}
               </p>
               <div className="user-benefits">
                 {getConductorBenefits().map((benefit, index) => (
@@ -620,7 +632,7 @@ const ParkeoYaLanding = () => {
               </div>
               <button className="user-section-cta">
                 <Smartphone />
-                <span>Descargar App</span>
+                <span>{t('conductors.downloadApp', 'Descargar App')}</span>
                 <ChevronRight />
               </button>
             </div>
@@ -629,22 +641,22 @@ const ParkeoYaLanding = () => {
                 <div className="user-demo-benefit">
                   <Clock className="user-demo-benefit-icon" />
                   <div className="user-demo-benefit-content">
-                    <div className="user-demo-benefit-title">Ahorra 15 min diarios</div>
-                    <div className="user-demo-benefit-description">Promedio en zonas urbanas</div>
+                    <div className="user-demo-benefit-title">{t('conductors.benefits.saveTime', 'Ahorra 15 min diarios')}</div>
+                    <div className="user-demo-benefit-description">{t('conductors.benefits.saveTimeDescription', 'Promedio en zonas urbanas')}</div>
                   </div>
                 </div>
                 <div className="user-demo-benefit">
                   <DollarSign className="user-demo-benefit-icon" />
                   <div className="user-demo-benefit-content">
-                    <div className="user-demo-benefit-title">Paga lo justo</div>
-                    <div className="user-demo-benefit-description">Cobro automático por minuto</div>
+                    <div className="user-demo-benefit-title">{t('conductors.benefits.fairPay', 'Paga lo justo')}</div>
+                    <div className="user-demo-benefit-description">{t('conductors.benefits.fairPayDescription', 'Cobro automático por minuto')}</div>
                   </div>
                 </div>
                 <div className="user-demo-benefit">
                   <Shield className="user-demo-benefit-icon" />
                   <div className="user-demo-benefit-content">
-                    <div className="user-demo-benefit-title">100% Garantizado</div>
-                    <div className="user-demo-benefit-description">Compensación si falla sensor</div>
+                    <div className="user-demo-benefit-title">{t('conductors.benefits.guaranteed', '100% Garantizado')}</div>
+                    <div className="user-demo-benefit-description">{t('conductors.benefits.guaranteedDescription', 'Compensación si falla sensor')}</div>
                   </div>
                 </div>
               </div>
@@ -662,28 +674,28 @@ const ParkeoYaLanding = () => {
                 <div className="text-center">
                   <div className="case-study-summary-stat">
                     <div className="case-study-summary-number">+20%</div>
-                    <div className="case-study-summary-label">Aumento promedio en ocupación</div>
+                    <div className="case-study-summary-label">{t('owners.occupancyIncrease', 'Aumento promedio en ocupación')}</div>
                   </div>
                 </div>
                 <div className="case-study-results">
                   <div className="case-study-metric">
                     <div className="case-study-metric-value neutral">5%</div>
-                    <div className="case-study-metric-label">Comisión por reserva</div>
+                    <div className="case-study-metric-label">{t('owners.commission', 'Comisión por reserva')}</div>
                   </div>
                   <div className="case-study-metric">
                     <div className="case-study-metric-value neutral">24/7</div>
-                    <div className="case-study-metric-label">Monitoreo continuo</div>
+                    <div className="case-study-metric-label">{t('owners.monitoring', 'Monitoreo continuo')}</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="user-section-content">
               <div className="section-badge">
-                Para Propietarios
+                {t('owners.badge', 'Para Propietarios')}
               </div>
-              <h2 className="user-section-title">Maximiza tus Ingresos con IoT</h2>
+              <h2 className="user-section-title">{t('owners.title', 'Maximiza tus Ingresos con IoT')}</h2>
               <p className="user-section-description">
-                Automatiza la gestión, aumenta ocupación y genera ingresos pasivos con nuestra plataforma.
+                {t('owners.description', 'Automatiza la gestión, aumenta ocupación y genera ingresos pasivos con nuestra plataforma.')}
               </p>
               <div className="user-benefits">
                 {getPropietarioBenefits().map((benefit, index) => (
@@ -695,7 +707,7 @@ const ParkeoYaLanding = () => {
               </div>
               <button className="user-section-cta">
                 <TrendingUp />
-                <span>Registrar mi Playa</span>
+                <span>{t('owners.registerProperty', 'Registrar mi Playa')}</span>
                 <ChevronRight />
               </button>
             </div>
@@ -707,8 +719,8 @@ const ParkeoYaLanding = () => {
       <section className="section">
         <div className="section-container">
           <div className="section-header">
-            <h2 className="section-title">Lo que dicen nuestros usuarios</h2>
-            <p className="section-description">Experiencias reales, resultados medibles</p>
+            <h2 className="section-title">{t('testimonials.title', 'Lo que dicen nuestros usuarios')}</h2>
+            <p className="section-description">{t('testimonials.subtitle', 'Experiencias reales, resultados medibles')}</p>
           </div>
           <div className="testimonials-grid">
             {getTestimonials().map((testimonial, index) => (
@@ -740,11 +752,11 @@ const ParkeoYaLanding = () => {
           <div className="contact-grid">
             <div className="contact-info">
               <div className="section-badge">
-                Contacto
+                {t('contact.badge', 'Contacto')}
               </div>
-              <h2 className="contact-title">Hablemos de tu Proyecto</h2>
+              <h2 className="contact-title">{t('contact.title', 'Hablemos de tu Proyecto')}</h2>
               <p className="contact-description">
-                ¿Tienes preguntas? ¿Quieres una demo personalizada? Nuestro equipo está listo para ayudarte.
+                {t('contact.description', '¿Tienes preguntas? ¿Quieres una demo personalizada? Nuestro equipo está listo para ayudarte.')}
               </p>
 
               <div className="contact-methods">
@@ -753,7 +765,7 @@ const ParkeoYaLanding = () => {
                     <Mail className="contact-method-icon-svg" />
                   </div>
                   <div className="contact-method-content">
-                    <div className="contact-method-title">Email</div>
+                    <div className="contact-method-title">{t('contact.methods.email', 'Email')}</div>
                     <a href="mailto:contacto@parkeoya.com" className="contact-method-link">
                       contacto@parkeoya.com
                     </a>
@@ -765,7 +777,7 @@ const ParkeoYaLanding = () => {
                     <Phone className="contact-method-icon-svg" />
                   </div>
                   <div className="contact-method-content">
-                    <div className="contact-method-title">Teléfono</div>
+                    <div className="contact-method-title">{t('contact.methods.phone', 'Teléfono')}</div>
                     <a href="tel:+51999888777" className="contact-method-link">
                       +51 999 888 777
                     </a>
@@ -777,68 +789,68 @@ const ParkeoYaLanding = () => {
                     <MapPin className="contact-method-icon-svg" />
                   </div>
                   <div className="contact-method-content">
-                    <div className="contact-method-title">Oficina</div>
+                    <div className="contact-method-title">{t('contact.methods.office', 'Oficina')}</div>
                     <p className="contact-method-text">
-                      Universidad Peruana de Ciencias Aplicadas<br />
-                      Av. Primavera 2390, Santiago de Surco<br />
-                      Lima, Perú
+                      {t('contact.address', 'Universidad Peruana de Ciencias Aplicadas\nAv. Primavera 2390, Santiago de Surco\nLima, Perú').split('\n').map((line, i) => (
+                        <span key={i}>{line}{i < 2 && <br />}</span>
+                      ))}
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="contact-hours">
-                <h3 className="contact-hours-title">Horario de Atención</h3>
-                <p className="contact-hours-text">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                <p className="contact-hours-text">Sábados: 9:00 AM - 1:00 PM</p>
+                <h3 className="contact-hours-title">{t('contact.hours.title', 'Horario de Atención')}</h3>
+                <p className="contact-hours-text">{t('contact.hours.weekdays', 'Lunes a Viernes: 9:00 AM - 6:00 PM')}</p>
+                <p className="contact-hours-text">{t('contact.hours.saturday', 'Sábados: 9:00 AM - 1:00 PM')}</p>
               </div>
             </div>
 
             <div className="contact-form">
-              <h3 className="contact-form-title">Envíanos un Mensaje</h3>
+              <h3 className="contact-form-title">{t('contact.form.title', 'Envíanos un Mensaje')}</h3>
               <form className="contact-form-fields">
                 <div className="form-field">
-                  <label className="form-label">Nombre Completo</label>
+                  <label className="form-label">{t('contact.form.fields.name', 'Nombre Completo')}</label>
                   <input
                     type="text"
                     className="form-input"
-                    placeholder="Juan Pérez"
+                    placeholder={t('contact.form.fields.namePlaceholder', 'Juan Pérez')}
                   />
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Email</label>
+                  <label className="form-label">{t('contact.form.fields.email', 'Email')}</label>
                   <input
                     type="email"
                     className="form-input"
-                    placeholder="juan@ejemplo.com"
+                    placeholder={t('contact.form.fields.emailPlaceholder', 'juan@ejemplo.com')}
                   />
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Teléfono</label>
+                  <label className="form-label">{t('contact.form.fields.phone', 'Teléfono')}</label>
                   <input
                     type="tel"
                     className="form-input"
-                    placeholder="+51 999 888 777"
+                    placeholder={t('contact.form.fields.phonePlaceholder', '+51 999 888 777')}
                   />
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Tipo de Usuario</label>
+                  <label className="form-label">{t('contact.form.fields.userType', 'Tipo de Usuario')}</label>
                   <select className="form-select">
-                    <option>Conductor</option>
-                    <option>Propietario de Estacionamiento</option>
-                    <option>Empresa</option>
-                    <option>Otro</option>
+                    <option>{t('contact.form.fields.userTypes.conductor', 'Conductor')}</option>
+                    <option>{t('contact.form.fields.userTypes.propietario', 'Propietario de Estacionamiento')}</option>
+                    <option>{t('contact.form.fields.userTypes.empresa', 'Empresa')}</option>
+                    <option>{t('contact.form.fields.userTypes.otro', 'Otro')}</option>
                   </select>
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Mensaje</label>
+                  <label className="form-label">{t('contact.form.fields.message', 'Mensaje')}</label>
                   <textarea
                     className="form-textarea"
-                    placeholder="Cuéntanos cómo podemos ayudarte..."
+                    placeholder={t('contact.form.fields.messagePlaceholder', 'Cuéntanos cómo podemos ayudarte...')}
                   ></textarea>
                 </div>
 
@@ -847,7 +859,7 @@ const ParkeoYaLanding = () => {
                   className="form-submit"
                 >
                   <MessageSquare />
-                  <span>Enviar Mensaje</span>
+                  <span>{t('contact.form.submitBtn', 'Enviar Mensaje')}</span>
                 </button>
               </form>
             </div>
@@ -859,21 +871,21 @@ const ParkeoYaLanding = () => {
       <section id="registro" className="cta-section">
         <div className="cta-container">
           <h2 className="cta-title">
-            {selectedUserType === 'conductor' && '¿Listo para encontrar estacionamiento al instante?'}
-            {selectedUserType === 'propietario' && '¿Listo para maximizar tus ingresos?'}
-            {!selectedUserType && '¿Listo para empezar?'}
+            {selectedUserType === 'conductor' && t('cta.titles.conductor', '¿Listo para encontrar estacionamiento al instante?')}
+            {selectedUserType === 'propietario' && t('cta.titles.propietario', '¿Listo para maximizar tus ingresos?')}
+            {!selectedUserType && t('cta.titles.default', '¿Listo para empezar?')}
           </h2>
           <p className="cta-description">
-            Únete a ParkeoYa hoy y experimenta la diferencia de la tecnología IoT
+            {t('cta.description', 'Únete a ParkeoYa hoy y experimenta la diferencia de la tecnología IoT')}
           </p>
           <div className="cta-actions">
             <button className="cta-btn-primary">
               <Users />
-              <span>Registrarme como Conductor</span>
+              <span>{t('cta.conductorBtn', 'Registrarme como Conductor')}</span>
             </button>
             <button className="cta-btn-secondary">
               <TrendingUp />
-              <span>Registrarme como Propietario</span>
+              <span>{t('cta.propietarioBtn', 'Registrarme como Propietario')}</span>
             </button>
           </div>
         </div>
@@ -890,35 +902,35 @@ const ParkeoYaLanding = () => {
                 </div>
                 <span className="footer-logo-text">ParkeoYa</span>
               </div>
-              <p className="footer-description">Estacionamiento inteligente con tecnología IoT para ciudades modernas.</p>
+              <p className="footer-description">{t('footer.description', 'Estacionamiento inteligente con tecnología IoT para ciudades modernas.')}</p>
             </div>
             <div className="footer-section">
-              <h3 className="footer-title">Producto</h3>
+              <h3 className="footer-title">{t('footer.sections.product', 'Producto')}</h3>
               <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('caracteristicas')} className="footer-link">Características</button></li>
-                <li><button onClick={() => scrollToSection('precios')} className="footer-link">Precios</button></li>
-                <li><button onClick={() => scrollToSection('casos-exito')} className="footer-link">Casos de Éxito</button></li>
+                <li><button onClick={() => scrollToSection('caracteristicas')} className="footer-link">{t('footer.links.features', 'Características')}</button></li>
+                <li><button onClick={() => scrollToSection('precios')} className="footer-link">{t('footer.links.pricing', 'Precios')}</button></li>
+                <li><button onClick={() => scrollToSection('casos-exito')} className="footer-link">{t('footer.links.caseStudies', 'Casos de Éxito')}</button></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h3 className="footer-title">Soporte</h3>
+              <h3 className="footer-title">{t('footer.sections.support', 'Soporte')}</h3>
               <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">Centro de Ayuda</button></li>
-                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">Contacto</button></li>
-                <li><button className="footer-link">FAQ</button></li>
+                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">{t('footer.links.help', 'Centro de Ayuda')}</button></li>
+                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">{t('footer.links.contact', 'Contacto')}</button></li>
+                <li><button className="footer-link">{t('footer.links.faq', 'FAQ')}</button></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h3 className="footer-title">Empresa</h3>
+              <h3 className="footer-title">{t('footer.sections.company', 'Empresa')}</h3>
               <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('sobre-nosotros')} className="footer-link">Sobre Nosotros</button></li>
-                <li><button className="footer-link">Blog</button></li>
-                <li><button className="footer-link">Trabaja con Nosotros</button></li>
+                <li><button onClick={() => scrollToSection('sobre-nosotros')} className="footer-link">{t('footer.links.about', 'Sobre Nosotros')}</button></li>
+                <li><button className="footer-link">{t('footer.links.blog', 'Blog')}</button></li>
+                <li><button className="footer-link">{t('footer.links.careers', 'Trabaja con Nosotros')}</button></li>
               </ul>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 ParkeoYa - Lorem Ipsum UPC. Todos los derechos reservados.</p>
+            <p>{t('footer.copyright', '© 2025 ParkeoYa - Lorem Ipsum UPC. Todos los derechos reservados.')}</p>
           </div>
         </div>
       </footer>

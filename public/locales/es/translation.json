@@ -240,6 +240,7 @@
   },
   "testimonials": {
     "title": "Lo que Dicen Nuestros Usuarios",
+    "subtitle": "Experiencias reales, resultados medibles",
     "items": [
       {
         "name": "Joan Talizo",
@@ -299,6 +300,50 @@
     "description": "Únete a ParkeoYa hoy y experimenta la diferencia de la tecnología IoT",
     "conductorBtn": "Registrarme como Conductor",
     "propietarioBtn": "Registrarme como Propietario"
+  },
+  "conductors": {
+    "badge": "Para Conductores",
+    "title": "Estaciona Inteligente, Ahorra Tiempo",
+    "description": "Olvídate de dar vueltas. Con ParkeoYa, encuentras y reservas tu espacio en segundos.",
+    "downloadApp": "Descargar App",
+    "benefits": {
+      "saveTime": "Ahorra 15 min diarios",
+      "saveTimeDescription": "Promedio en zonas urbanas",
+      "fairPay": "Paga lo justo",
+      "fairPayDescription": "Cobro automático por minuto",
+      "guaranteed": "100% Garantizado",
+      "guaranteedDescription": "Compensación si falla sensor"
+    }
+  },
+  "owners": {
+    "badge": "Para Propietarios",
+    "title": "Maximiza tus Ingresos con IoT",
+    "description": "Automatiza la gestión, aumenta ocupación y genera ingresos pasivos con nuestra plataforma.",
+    "registerProperty": "Registrar mi Playa",
+    "occupancyIncrease": "Aumento promedio en ocupación",
+    "commission": "Comisión por reserva",
+    "monitoring": "Monitoreo continuo"
+  },
+  "caseStudiesSummary": {
+    "title": "Resultados Comprobados",
+    "subtitle": "Descubre cómo ParkeoYa ha transformado negocios reales",
+    "summaryTitle": "Resultados Promedio de Nuestros Clientes",
+    "metrics": {
+      "occupancyIncrease": "Aumento en Ocupación",
+      "revenueGrowth": "Crecimiento en Ingresos",
+      "timeReduction": "Reducción de Tiempo",
+      "avgROI": "ROI Promedio"
+    },
+    "values": {
+      "occupancyIncrease": "+24%",
+      "revenueGrowth": "+29%",
+      "timeReduction": "-40%",
+      "avgROI": "4 meses"
+    }
+  },
+  "pricingFooter": {
+    "question": "¿Necesitas un plan personalizado? Contáctanos para obtener una cotización especial.",
+    "contactSales": "Hablar con Ventas"
   },
   "footer": {
     "description": "Estacionamiento inteligente con tecnología IoT para ciudades modernas.",
