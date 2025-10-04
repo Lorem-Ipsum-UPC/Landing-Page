@@ -242,9 +242,6 @@ const ParkeoYaLanding = () => {
         <div className="hero-container">
           <div className="hero-grid">
             <div className="hero-content">
-              <div className="hero-badge">
-                {t('hero.badge', 'Tecnología IoT para Movilidad Urbana')}
-              </div>
               <h1 className="hero-title">
                 {t('hero.title', 'Encuentra Estacionamiento ')}
                 <span className="hero-title-gradient">
@@ -415,9 +412,6 @@ const ParkeoYaLanding = () => {
       <section id="caracteristicas" className="section section-alt">
         <div className="section-container">
           <div className="section-header">
-            <div className="section-badge">
-              {t('detailedFeatures.badge')}
-            </div>
             <h2 className="section-title">{t('detailedFeatures.title')}</h2>
             <p className="section-description">
               {t('detailedFeatures.subtitle')}
@@ -465,9 +459,6 @@ const ParkeoYaLanding = () => {
       <section id="precios" className="section">
         <div className="section-container">
           <div className="section-header">
-            <div className="section-badge">
-              {t('pricing.badge')}
-            </div>
             <h2 className="section-title">{t('pricing.title')}</h2>
             <p className="section-description">
               {t('pricing.subtitle')}
@@ -539,9 +530,6 @@ const ParkeoYaLanding = () => {
       <section id="casos-exito" className="section section-alt">
         <div className="section-container">
           <div className="section-header">
-            <div className="section-badge">
-              {t('caseStudiesSummary.title', 'Casos de Éxito')}
-            </div>
             <h2 className="section-title">{t('caseStudiesSummary.title', 'Resultados Comprobados')}</h2>
             <p className="section-description">
               {t('caseStudiesSummary.subtitle', 'Descubre cómo ParkeoYa ha transformado negocios reales')}
