@@ -21,7 +21,6 @@ const LanguageSelector = () => {
         <button className="language-trigger">
           <Globe size={16} />
           <span className="current-language">
-            {languages.find(lang => lang.code === i18n.language)?.flag} 
             {languages.find(lang => lang.code === i18n.language)?.name}
           </span>
         </button>
@@ -32,7 +31,6 @@ const LanguageSelector = () => {
               onClick={() => handleLanguageChange(language.code)}
               className={`language-option ${i18n.language === language.code ? 'active' : ''}`}
             >
-              <span className="language-flag">{language.flag}</span>
               <span className="language-name">{language.name}</span>
             </button>
           ))}
