@@ -1,0 +1,381 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "cases": "Success Cases",
+    "contact": "Contact",
+    "login": "Log In",
+    "register": "Sign Up"
+  },
+  "hero": {
+    "badge": "IoT Technology for Urban Mobility",
+    "title": "Find Parking",
+    "titleHighlight": "in Real Time",
+    "description": "IoT sensors detect availability instantly. Book, pay and park without circling around. Optimize your time and your income.",
+    "btnDriver": "I'm a Driver",
+    "btnOwner": "I'm an Owner",
+    "stat1": "Less search time",
+    "stat2": "CO₂ reduction",
+    "stat3": "More occupancy",
+    "availableSpaces": "available spaces near you",
+    "reserve": "Reserve",
+    "hour": "hour",
+    "parking1": "Downtown Parking",
+    "parking2": "San Isidro Plaza",
+    "parking3": "Express Parking"
+  },
+  "features": {
+    "badge": "How It Works",
+    "title": "IoT Technology that Works",
+    "subtitle": "Smart sensors for a frictionless experience",
+    "feature1": {
+      "title": "Real-Time Availability",
+      "description": "IoT sensors detect free spaces instantly. Save up to 15 minutes per search."
+    },
+    "feature2": {
+      "title": "Smart Geolocation",
+      "description": "Find nearby parking lots with exact distances and integrated navigation."
+    },
+    "feature3": {
+      "title": "Guaranteed Reservation",
+      "description": "Your space confirmed by sensors. No surprises, no circling around."
+    },
+    "feature4": {
+      "title": "Maximize Revenue",
+      "description": "For owners: increase occupancy up to 20% with automated management."
+    }
+  },
+  "about": {
+    "badge": "Who We Are",
+    "title": "Revolutionizing Urban Mobility",
+    "description": "We are Lorem-Ipsum-UPC, a team of Software Engineering students from UPC committed to creating technological solutions that improve the quality of life in cities.",
+    "mission": {
+      "title": "Mission",
+      "description": "Revolutionize the parking experience by connecting drivers and administrators through an intelligent platform that optimizes space usage and reduces search times."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "Establish ourselves as the leading startup in parking management solutions nationwide, contributing to efficient mobility through innovative and sustainable technology."
+    },
+    "values": {
+      "title": "Values",
+      "description": "Innovation, transparency, sustainability and commitment to continuous improvement. We prioritize user experience and positive environmental impact."
+    },
+    "problem": {
+      "title": "The Problem We Solve",
+      "description": "In Lima, more than 100,000 vehicles are added to the automotive fleet each year. Drivers lose up to 20 minutes searching for parking during peak hours, generating:",
+      "point1": "60% of traffic in downtown areas searching for parking",
+      "point2": "Increased CO₂ emissions and pollution",
+      "point3": "Stress and frustration in daily drivers",
+      "point4": "Low profitability for parking lot owners",
+      "stat1Label": "New vehicles per year in Lima",
+      "stat2Label": "Average search time",
+      "stat3Label": "Of traffic searching for parking"
+    }
+  },
+  "detailedFeatures": {
+    "badge": "Features",
+    "title": "Cutting-Edge Technology",
+    "description": "We integrate the latest innovations in IoT, edge computing and mobile applications to offer you the best experience.",
+    "feature1": {
+      "title": "Advanced IoT Sensors",
+      "description": "Real-time detection technology with 99.9% accuracy. Each space has sensors that communicate their status instantly."
+    },
+    "feature2": {
+      "title": "Multi-platform App",
+      "description": "Seamless experience on iOS, Android and Web. Automatic synchronization across all your devices."
+    },
+    "feature3": {
+      "title": "Smart Notifications",
+      "description": "Customizable alerts for reservation expiration, new nearby spaces and special promotions."
+    },
+    "feature4": {
+      "title": "Secure Payments",
+      "description": "Encrypted transactions with the highest security standards. Multiple payment methods available."
+    },
+    "feature5": {
+      "title": "Real-Time Analytics",
+      "description": "Complete dashboard with occupancy metrics, revenue and trends. Downloadable Excel reports."
+    },
+    "feature6": {
+      "title": "Edge Computing",
+      "description": "Distributed processing for instant responses even without internet connection."
+    },
+    "techTitle": "How Does IoT Technology Work?",
+    "techDescription": "Each parking space has sensors that detect the presence of vehicles. Data is processed on local edge servers and synchronized with the cloud in real time, allowing instant updates in the application.",
+    "step1": "Sensor detects vehicle",
+    "step2": "Edge server processes",
+    "step3": "Cloud synchronizes",
+    "step4": "App updates"
+  },
+  "pricing": {
+    "badge": "Pricing",
+    "title": "Plans for Everyone",
+    "description": "Choose the plan that best suits your needs",
+    "toggleDriver": "For Drivers",
+    "toggleOwner": "For Owners",
+    "recommended": "Recommended",
+    "btnStart": "Get Started",
+    "btnContact": "Contact Sales",
+    "footerText": "Need a custom plan? Contact us for a special quote.",
+    "footerLink": "Talk to Sales",
+    "driver": {
+      "basic": {
+        "name": "Basic",
+        "price": "Free",
+        "period": "forever",
+        "feature1": "Unlimited parking search",
+        "feature2": "Real-time reservations",
+        "feature3": "Pay-per-use (no commissions)",
+        "feature4": "Reservation history",
+        "feature5": "Email support"
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "S/ 9.90",
+        "period": "month",
+        "feature1": "Everything in Basic plan",
+        "feature2": "Exclusive discounts (up to 15%)",
+        "feature3": "Priority reservations",
+        "feature4": "Ad-free",
+        "feature5": "24/7 priority support",
+        "feature6": "Loyalty program"
+      }
+    },
+    "owner": {
+      "starter": {
+        "name": "Starter",
+        "price": "S/ 49",
+        "period": "month",
+        "feature1": "Up to 20 spaces",
+        "feature2": "5% commission per reservation",
+        "feature3": "1 Edge Server included",
+        "feature4": "Basic dashboard",
+        "feature5": "Email support",
+        "feature6": "IoT sensors (rental included)"
+      },
+      "business": {
+        "name": "Business",
+        "price": "S/ 149",
+        "period": "month",
+        "feature1": "Up to 100 spaces",
+        "feature2": "4% commission per reservation",
+        "feature3": "3 Edge Servers included",
+        "feature4": "Advanced analytics",
+        "feature5": "Priority support",
+        "feature6": "API access",
+        "feature7": "Custom reports"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Custom",
+        "feature1": "Unlimited spaces",
+        "feature2": "Negotiable commission",
+        "feature3": "Dedicated infrastructure",
+        "feature4": "24/7 dedicated support",
+        "feature5": "Custom integration",
+        "feature6": "Guaranteed SLA",
+        "feature7": "Consulting included"
+      }
+    }
+  },
+  "cases": {
+    "badge": "Success Cases",
+    "title": "Proven Results",
+    "description": "Discover how ParkeoYa has transformed real businesses",
+    "occupancy": "Occupancy",
+    "revenue": "Revenue",
+    "time": "Time",
+    "owner": "Owner",
+    "summaryTitle": "Average Results of Our Clients",
+    "avgOccupancy": "Increase in Occupancy",
+    "avgRevenue": "Revenue Growth",
+    "avgTime": "Time Reduction",
+    "avgROI": "Average ROI"
+  },
+  "drivers": {
+    "badge": "For Drivers",
+    "title": "Park Smart, Save Time",
+    "description": "Stop circling around. With ParkeoYa, find and reserve your space in seconds.",
+    "benefit1": "Find parking in seconds",
+    "benefit2": "Advance reservation with QR code",
+    "benefit3": "Automatic payment for real time",
+    "benefit4": "Expiration notifications",
+    "benefit5": "History and parking reviews",
+    "btnDownload": "Download App",
+    "save15": "Save 15 min daily",
+    "save15Desc": "Average in urban areas",
+    "payFair": "Pay what's fair",
+    "payFairDesc": "Automatic billing per minute",
+    "guaranteed": "100% Guaranteed",
+    "guaranteedDesc": "Compensation if sensor fails"
+  },
+  "owners": {
+    "badge": "For Owners",
+    "title": "Maximize Your Revenue with IoT",
+    "description": "Automate management, increase occupancy and generate passive income with our platform.",
+    "benefit1": "Control panel with real-time metrics",
+    "benefit2": "Automated space management",
+    "benefit3": "Revenue and occupancy reports",
+    "benefit4": "Transparent 5% commission",
+    "benefit5": "IoT sensors installation included",
+    "btnRegister": "Register My Parking Lot",
+    "avgIncrease": "Average increase in occupancy",
+    "commission": "Commission per reservation",
+    "monitoring": "Continuous monitoring"
+  },
+  "testimonials": {
+    "title": "What our users say",
+    "description": "Real experiences, measurable results"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's Talk About Your Project",
+    "description": "Have questions? Want a personalized demo? Our team is ready to help you.",
+    "email": "Email",
+    "phone": "Phone",
+    "office": "Office",
+    "officeAddress": "Peruvian University of Applied Sciences\nAv. Primavera 2390, Santiago de Surco\nLima, Peru",
+    "hoursTitle": "Business Hours",
+    "hoursWeekday": "Monday to Friday: 9:00 AM - 6:00 PM",
+    "hoursSaturday": "Saturdays: 9:00 AM - 1:00 PM",
+    "formTitle": "Send Us a Message",
+    "formName": "Full Name",
+    "formNamePlaceholder": "John Doe",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "john@example.com",
+    "formPhone": "Phone",
+    "formPhonePlaceholder": "+51 999 888 777",
+    "formUserType": "User Type",
+    "formUserDriver": "Driver",
+    "formUserOwner": "Parking Lot Owner",
+    "formUserCompany": "Company",
+    "formUserOther": "Other",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Tell us how we can help you...",
+    "formSubmit": "Send Message"
+  },
+  "cta": {
+    "titleDriver": "Ready to find parking instantly?",
+    "titleOwner": "Ready to maximize your revenue?",
+    "titleDefault": "Ready to get started?",
+    "description": "Join ParkeoYa today and experience the difference of IoT technology",
+    "btnDriver": "Sign Up as Driver",
+    "btnOwner": "Sign Up as Owner"
+  },
+  "footer": {
+    "description": "Smart parking with IoT technology for modern cities.",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "cases": "Success Cases",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "company": "Company",
+    "about": "About Us",
+    "blog": "Blog",
+    "careers": "Careers",
+    "terms": "Terms & Conditions",
+    "aboutProject": "About the Project",
+    "copyright": "© 2025 ParkeoYa - Lorem Ipsum UPC. All rights reserved."
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "subtitle": "User Agreement",
+    "lastUpdated": "Last Updated",
+    "date": "October 4, 2025",
+    "backHome": "Back to Home",
+    "acceptance": {
+      "title": "1. Acceptance of Terms",
+      "content": "By using ParkeoYa, you accept these Terms and Conditions. This service is provided under professional ethics principles of ACM, IEEE, and CIP (Colegio de Ingenieros del Perú), ensuring quality, transparency, and user protection."
+    },
+    "service": {
+      "title": "2. Use of Service",
+      "content": "ParkeoYa provides a platform to search, reserve, and pay for parking spaces in real-time using IoT technology. Users agree to use the service legally and responsibly, respecting parking regulations and other users' rights."
+    },
+    "responsibilities": {
+      "title": "3. User Responsibilities",
+      "content": "Users must provide accurate information, comply with parking regulations, and use the platform ethically. Drivers must respect reservation times, and parking lot owners must ensure their spaces are properly managed and available."
+    },
+    "privacy": {
+      "title": "4. Privacy and Data Protection",
+      "content": "We protect your personal data according to current regulations. We collect only necessary information to provide the service and will never share it with third parties without your consent. See our Privacy Policy for more details."
+    },
+    "modifications": {
+      "title": "5. Modifications",
+      "content": "We reserve the right to modify these terms at any time. Users will be notified of significant changes via email or through the platform. Continued use after modifications constitutes acceptance of new terms."
+    },
+    "ethics": {
+      "title": "Professional Ethics",
+      "content": "This project is developed under the ethical principles of ACM, IEEE, and CIP, committing to integrity, transparency, social responsibility, and excellence in service."
+    }
+  },
+  "videos": {
+    "badge": "Watch & Learn",
+    "productTitle": "About the Product",
+    "productDescription": "Discover how ParkeoYa revolutionizes urban parking with IoT technology",
+    "teamTitle": "Meet the Team",
+    "teamDescription": "Get to know the team behind ParkeoYa and our development process"
+  },
+  "aboutProject": {
+    "title": "About the Project",
+    "subtitle": "Development Lifecycle and Technology",
+    "backToTop": "Back to Top",
+    "scrum": {
+      "title": "Scrum Development Lifecycle",
+      "intro": "ParkeoYa was developed following the Scrum agile methodology, which allowed us to deliver value incrementally and adapt to changes efficiently.",
+      "phase1": {
+        "title": "Sprint Planning",
+        "description": "We defined user stories and prioritized features based on user value and technical feasibility."
+      },
+      "phase2": {
+        "title": "Daily Standups",
+        "description": "Daily synchronization meetings to identify blockers and maintain team alignment."
+      },
+      "phase3": {
+        "title": "Sprint Development",
+        "description": "2-week sprints where we implemented features, conducted code reviews, and performed continuous testing."
+      },
+      "phase4": {
+        "title": "Sprint Review",
+        "description": "Demonstrations of completed functionality to stakeholders and gathering feedback."
+      },
+      "phase5": {
+        "title": "Sprint Retrospective",
+        "description": "Team reflection to identify improvements and optimize the development process."
+      }
+    },
+    "github": {
+      "title": "Version Control with GitHub",
+      "intro": "We use GitHub as our collaborative development platform and version control system:",
+      "feature1": {
+        "title": "Branching Strategy",
+        "description": "We implement GitFlow with main, develop, and feature branches for organized workflow."
+      },
+      "feature2": {
+        "title": "Pull Requests",
+        "description": "All changes go through code review before merging to ensure quality and knowledge sharing."
+      },
+      "feature3": {
+        "title": "Continuous Integration",
+        "description": "Automated tests run on each commit to maintain code stability."
+      },
+      "feature4": {
+        "title": "Issue Tracking",
+        "description": "We manage bugs, features, and tasks through GitHub Issues with clear labels and assignments."
+      }
+    },
+    "team": {
+      "title": "Development Team",
+      "description": "ParkeoYa is developed by Lorem-Ipsum-UPC, a team of Software Engineering students from UPC committed to applying best practices in software development and professional ethics."
+    },
+    "footer": {
+      "title": "Commitment to Excellence",
+      "description": "We are committed to continuous learning and improvement, applying professional standards and delivering quality solutions that make a positive impact on urban mobility."
+    }
+  }
+}

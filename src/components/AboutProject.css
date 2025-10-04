@@ -1,0 +1,234 @@
+.about-project-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  position: relative;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.back-to-top-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.back-to-top-btn:active {
+  transform: translateX(-3px);
+}
+
+.about-project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.about-project-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #6366f1;
+  margin: 0 auto 1rem;
+}
+
+.about-project-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.about-project-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+.about-project-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-project-section {
+  margin-bottom: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.about-project-section-icon {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.about-project-section-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.about-project-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.about-project-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.scrum-phases {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.scrum-phase {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  border-left: 4px solid #6366f1;
+}
+
+.scrum-phase-number {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.scrum-phase-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.scrum-phase-text {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.github-features {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.github-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+}
+
+.github-feature-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #10b981;
+  margin-top: 0.25rem;
+}
+
+.github-feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.github-feature-text {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.about-project-footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.about-project-footer-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+}
+
+.about-project-footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.about-project-footer-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .about-project-container {
+    padding: 2rem 1rem;
+  }
+
+  .about-project-title {
+    font-size: 2rem;
+  }
+
+  .about-project-section {
+    padding: 1.5rem;
+  }
+
+  .scrum-phase {
+    flex-direction: column;
+  }
+
+  .scrum-phase-number {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}

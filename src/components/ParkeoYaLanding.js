@@ -1,199 +1,69 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Clock, DollarSign, Users, Smartphone, CheckCircle, Menu, X, ChevronRight, Star, Zap, Shield, TrendingUp, Target, Award, BarChart3, Globe, Mail, Phone, MessageSquare, Camera, Cpu, Bell, Lock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 import './ParkeoYaLanding.css';
 
 const ParkeoYaLanding = () => {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedUserType, setSelectedUserType] = useState(null);
-  const [selectedPlan, setSelectedPlan] = useState('conductor');
 
   const features = [
     {
       icon: <Zap className="feature-icon-large" />,
-      title: "Disponibilidad en Tiempo Real",
-      description: "Sensores IoT detectan espacios libres al instante. Ahorra hasta 15 minutos por búsqueda."
+      titleKey: "features.feature1.title",
+      descriptionKey: "features.feature1.description"
     },
     {
       icon: <MapPin className="feature-icon-large" />,
-      title: "Geolocalización Inteligente",
-      description: "Encuentra estacionamientos cercanos con distancias exactas y navegación integrada."
+      titleKey: "features.feature2.title",
+      descriptionKey: "features.feature2.description"
     },
     {
       icon: <Shield className="feature-icon-large" />,
-      title: "Reserva Garantizada",
-      description: "Tu espacio confirmado por sensores. Sin sorpresas, sin dar vueltas."
+      titleKey: "features.feature3.title",
+      descriptionKey: "features.feature3.description"
     },
     {
       icon: <TrendingUp className="feature-icon-large" />,
-      title: "Maximiza Ingresos",
-      description: "Para propietarios: aumenta ocupación hasta 20% con gestión automatizada."
+      titleKey: "features.feature4.title",
+      descriptionKey: "features.feature4.description"
     }
   ];
 
   const detailedFeatures = [
     {
       icon: <Camera className="detailed-feature-icon" />,
-      title: "Sensores IoT Avanzados",
-      description: "Tecnología de detección en tiempo real con precisión del 99.9%. Cada espacio cuenta con sensores que comunican su estado instantáneamente."
+      titleKey: "detailedFeatures.feature1.title",
+      descriptionKey: "detailedFeatures.feature1.description"
     },
     {
       icon: <Smartphone className="detailed-feature-icon" />,
-      title: "App Multiplataforma",
-      description: "Experiencia fluida en iOS, Android y Web. Sincronización automática entre todos tus dispositivos."
+      titleKey: "detailedFeatures.feature2.title",
+      descriptionKey: "detailedFeatures.feature2.description"
     },
     {
       icon: <Bell className="detailed-feature-icon" />,
-      title: "Notificaciones Inteligentes",
-      description: "Alertas personalizables para vencimiento de reserva, nuevos espacios cercanos y promociones especiales."
+      titleKey: "detailedFeatures.feature3.title",
+      descriptionKey: "detailedFeatures.feature3.description"
     },
     {
       icon: <Lock className="detailed-feature-icon" />,
-      title: "Pagos Seguros",
-      description: "Transacciones encriptadas con los más altos estándares de seguridad. Múltiples métodos de pago disponibles."
+      titleKey: "detailedFeatures.feature4.title",
+      descriptionKey: "detailedFeatures.feature4.description"
     },
     {
       icon: <BarChart3 className="detailed-feature-icon" />,
-      title: "Analytics en Tiempo Real",
-      description: "Dashboard completo con métricas de ocupación, ingresos y tendencias. Reportes descargables en Excel."
+      titleKey: "detailedFeatures.feature5.title",
+      descriptionKey: "detailedFeatures.feature5.description"
     },
     {
       icon: <Cpu className="detailed-feature-icon" />,
-      title: "Edge Computing",
-      description: "Procesamiento distribuido para respuestas instantáneas incluso sin conexión a internet."
+      titleKey: "detailedFeatures.feature6.title",
+      descriptionKey: "detailedFeatures.feature6.description"
     }
-  ];
-
-  const pricingPlans = {
-    conductor: [
-      {
-        name: "Básico",
-        price: "Gratis",
-        period: "siempre",
-        features: [
-          "Búsqueda ilimitada de estacionamientos",
-          "Reservas en tiempo real",
-          "Pago por uso (sin comisiones)",
-          "Historial de reservas",
-          "Soporte por email"
-        ],
-        recommended: false
-      },
-      {
-        name: "Premium",
-        price: "S/ 9.90",
-        period: "mes",
-        features: [
-          "Todo lo del plan Básico",
-          "Descuentos exclusivos (hasta 15%)",
-          "Reservas prioritarias",
-          "Sin anuncios",
-          "Soporte prioritario 24/7",
-          "Programa de fidelización"
-        ],
-        recommended: true
-      }
-    ],
-    propietario: [
-      {
-        name: "Starter",
-        price: "S/ 49",
-        period: "mes",
-        features: [
-          "Hasta 20 espacios",
-          "Comisión 5% por reserva",
-          "1 Edge Server incluido",
-          "Dashboard básico",
-          "Soporte por email",
-          "Sensores IoT (alquiler incluido)"
-        ],
-        recommended: false
-      },
-      {
-        name: "Business",
-        price: "S/ 149",
-        period: "mes",
-        features: [
-          "Hasta 100 espacios",
-          "Comisión 4% por reserva",
-          "3 Edge Servers incluidos",
-          "Analytics avanzado",
-          "Soporte prioritario",
-          "API access",
-          "Reportes personalizados"
-        ],
-        recommended: true
-      },
-      {
-        name: "Enterprise",
-        price: "Personalizado",
-        period: "",
-        features: [
-          "Espacios ilimitados",
-          "Comisión negociable",
-          "Infraestructura dedicada",
-          "Soporte 24/7 dedicado",
-          "Integración personalizada",
-          "SLA garantizado",
-          "Consultoría incluida"
-        ],
-        recommended: false
-      }
-    ]
-  };
-
-  const caseStudies = [
-    {
-      company: "Estacionamiento Centro",
-      location: "San Isidro, Lima",
-      image: "🏢",
-      results: {
-        occupancy: "+25%",
-        revenue: "+30%",
-        time: "-40%"
-      },
-      testimonial: "ParkeoYa transformó completamente nuestro negocio. La automatización nos permitió reducir personal y aumentar ingresos simultáneamente.",
-      owner: "Carlos Mendoza"
-    },
-    {
-      company: "Plaza Mall Parking",
-      location: "Miraflores, Lima",
-      image: "🏬",
-      results: {
-        occupancy: "+18%",
-        revenue: "+22%",
-        time: "-35%"
-      },
-      testimonial: "Los clientes valoran muchísimo poder reservar antes de llegar. Hemos eliminado colas y mejorado la experiencia.",
-      owner: "María Torres"
-    },
-    {
-      company: "Express Park",
-      location: "San Miguel, Lima",
-      image: "🚗",
-      results: {
-        occupancy: "+30%",
-        revenue: "+35%",
-        time: "-45%"
-      },
-      testimonial: "La inversión se recuperó en 4 meses. Los reportes en tiempo real nos ayudan a tomar mejores decisiones.",
-      owner: "Roberto Silva"
-    }
-  ];
-
-  const conductorBenefits = [
-    "Encuentra estacionamiento en segundos",
-    "Reserva anticipada con código QR",
-    "Pago automático por tiempo real",
-    "Notificaciones de vencimiento",
-    "Historial y reseñas de estacionamientos"
-  ];
-
-  const propietarioBenefits = [
-    "Panel de control con métricas en tiempo real",
-    "Gestión automatizada de espacios",
-    "Reportes de ingresos y ocupación",
-    "Comisión transparente del 5%",
-    "Instalación de sensores IoT incluida"
   ];
 
   const testimonials = [
@@ -219,11 +89,11 @@ const ParkeoYaLanding = () => {
   return (
     <div className="landing-container">
       {/* Navigation */}
-      <nav className="navigation">
+      <nav className="navigation" role="navigation" aria-label="Main navigation">
         <div className="nav-container">
           <div className="nav-content">
             <div className="logo-container">
-              <div className="logo">
+              <div className="logo" aria-hidden="true">
                 <MapPin />
               </div>
               <span className="logo-text">
@@ -232,21 +102,22 @@ const ParkeoYaLanding = () => {
             </div>
 
             {/* Desktop Menu */}
-            <div className="nav-menu">
-              <button onClick={() => scrollToSection('inicio')} className="nav-button">Inicio</button>
-              <button onClick={() => scrollToSection('sobre-nosotros')} className="nav-button">Sobre Nosotros</button>
-              <button onClick={() => scrollToSection('caracteristicas')} className="nav-button">Características</button>
-              <button onClick={() => scrollToSection('precios')} className="nav-button">Precios</button>
-              <button onClick={() => scrollToSection('casos-exito')} className="nav-button">Casos de Éxito</button>
-              <button onClick={() => scrollToSection('contacto')} className="nav-button">Contacto</button>
+            <div className="nav-menu" role="menubar" aria-label="Main menu">
+              <button onClick={() => scrollToSection('inicio')} className="nav-button" role="menuitem" aria-label={`Navigate to ${t('nav.home')}`}>{t('nav.home')}</button>
+              <button onClick={() => scrollToSection('sobre-nosotros')} className="nav-button" role="menuitem" aria-label={`Navigate to ${t('nav.about')}`}>{t('nav.about')}</button>
+              <button onClick={() => scrollToSection('caracteristicas')} className="nav-button" role="menuitem" aria-label={`Navigate to ${t('nav.features')}`}>{t('nav.features')}</button>
+              <button onClick={() => scrollToSection('about-product')} className="nav-button" role="menuitem" aria-label="Navigate to Product Video">{t('videos.productTitle')}</button>
+              <button onClick={() => scrollToSection('about-team')} className="nav-button" role="menuitem" aria-label="Navigate to Team Video">{t('videos.teamTitle')}</button>
+              <button onClick={() => scrollToSection('contacto')} className="nav-button" role="menuitem" aria-label={`Navigate to ${t('nav.contact')}`}>{t('nav.contact')}</button>
             </div>
 
             <div className="nav-actions">
-              <button className="btn-outline">
-                Iniciar Sesión
+              <LanguageSwitcher />
+              <button className="btn-outline" aria-label={t('nav.login')}>
+                {t('nav.login')}
               </button>
-              <button className="btn-primary">
-                Registrarse
+              <button className="btn-primary" aria-label={t('nav.register')}>
+                {t('nav.register')}
               </button>
             </div>
 
@@ -254,25 +125,29 @@ const ParkeoYaLanding = () => {
             <button 
               className="mobile-menu-button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {mobileMenuOpen ? <X /> : <Menu />}
+              {mobileMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="mobile-menu">
+          <div className="mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile navigation">
             <div className="mobile-menu-content">
-              <button onClick={() => scrollToSection('inicio')} className="mobile-menu-item">Inicio</button>
-              <button onClick={() => scrollToSection('sobre-nosotros')} className="mobile-menu-item">Sobre Nosotros</button>
-              <button onClick={() => scrollToSection('caracteristicas')} className="mobile-menu-item">Características</button>
-              <button onClick={() => scrollToSection('precios')} className="mobile-menu-item">Precios</button>
-              <button onClick={() => scrollToSection('casos-exito')} className="mobile-menu-item">Casos de Éxito</button>
-              <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item">Contacto</button>
+              <button onClick={() => scrollToSection('inicio')} className="mobile-menu-item" role="menuitem">{t('nav.home')}</button>
+              <button onClick={() => scrollToSection('sobre-nosotros')} className="mobile-menu-item" role="menuitem">{t('nav.about')}</button>
+              <button onClick={() => scrollToSection('caracteristicas')} className="mobile-menu-item" role="menuitem">{t('nav.features')}</button>
+              <button onClick={() => scrollToSection('about-product')} className="mobile-menu-item" role="menuitem">{t('videos.productTitle')}</button>
+              <button onClick={() => scrollToSection('about-team')} className="mobile-menu-item" role="menuitem">{t('videos.teamTitle')}</button>
+              <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item" role="menuitem">{t('nav.contact')}</button>
               <div className="mobile-menu-actions">
-                <button className="btn-outline">Iniciar Sesión</button>
-                <button className="btn-primary">Registrarse</button>
+                <LanguageSwitcher />
+                <button className="btn-outline" aria-label={t('nav.login')}>{t('nav.login')}</button>
+                <button className="btn-primary" aria-label={t('nav.register')}>{t('nav.register')}</button>
               </div>
             </div>
           </div>
@@ -285,17 +160,16 @@ const ParkeoYaLanding = () => {
           <div className="hero-grid">
             <div className="hero-content">
               <div className="hero-badge">
-                Tecnología IoT para Movilidad Urbana
+                {t('hero.badge')}
               </div>
               <h1 className="hero-title">
-                Encuentra Estacionamiento 
+                {t('hero.title')} 
                 <span className="hero-title-gradient">
-                  en Tiempo Real
+                  {t('hero.titleHighlight')}
                 </span>
               </h1>
               <p className="hero-description">
-                Sensores IoT detectan disponibilidad al instante. Reserva, paga y estaciona sin dar vueltas. 
-                Optimiza tu tiempo y tus ingresos.
+                {t('hero.description')}
               </p>
               <div className="hero-actions">
                 <button 
@@ -306,7 +180,7 @@ const ParkeoYaLanding = () => {
                   className="btn-hero-primary"
                 >
                   <Users />
-                  <span>Soy Conductor</span>
+                  <span>{t('hero.btnDriver')}</span>
                 </button>
                 <button 
                   onClick={() => {
@@ -316,21 +190,21 @@ const ParkeoYaLanding = () => {
                   className="btn-hero-secondary"
                 >
                   <TrendingUp />
-                  <span>Soy Propietario</span>
+                  <span>{t('hero.btnOwner')}</span>
                 </button>
               </div>
               <div className="hero-stats">
                 <div className="hero-stat">
                   <div className="hero-stat-number">30%</div>
-                  <div className="hero-stat-label">Menos tiempo de búsqueda</div>
+                  <div className="hero-stat-label">{t('hero.stat1')}</div>
                 </div>
                 <div className="hero-stat">
                   <div className="hero-stat-number">15%</div>
-                  <div className="hero-stat-label">Reducción de CO₂</div>
+                  <div className="hero-stat-label">{t('hero.stat2')}</div>
                 </div>
                 <div className="hero-stat">
                   <div className="hero-stat-number">20%</div>
-                  <div className="hero-stat-label">Más ocupación</div>
+                  <div className="hero-stat-label">{t('hero.stat3')}</div>
                 </div>
               </div>
             </div>
@@ -339,20 +213,24 @@ const ParkeoYaLanding = () => {
               <div className="hero-demo-card">
                 <div className="demo-status">
                   <div className="demo-status-dot"></div>
-                  <span className="demo-status-text">3 espacios disponibles cerca de ti</span>
+                  <span className="demo-status-text">3 {t('hero.availableSpaces')}</span>
                 </div>
                 <div className="demo-parking-list">
-                  {['Estacionamiento Centro', 'Plaza San Isidro', 'Parqueo Express'].map((name, i) => (
+                  {[
+                    { nameKey: 'hero.parking1', distance: 150, price: 3 },
+                    { nameKey: 'hero.parking2', distance: 200, price: 4 },
+                    { nameKey: 'hero.parking3', distance: 250, price: 5 }
+                  ].map((parking, i) => (
                     <div key={i} className="demo-parking-item">
                       <div className="demo-parking-info">
                         <MapPin />
                         <div className="demo-parking-details">
-                          <div className="demo-parking-name">{name}</div>
-                          <div className="demo-parking-meta">{150 + i * 50}m • S/ {3 + i}/hora</div>
+                          <div className="demo-parking-name">{t(parking.nameKey)}</div>
+                          <div className="demo-parking-meta">{parking.distance}m • S/ {parking.price}/{t('hero.hour')}</div>
                         </div>
                       </div>
                       <button className="demo-reserve-btn">
-                        Reservar
+                        {t('hero.reserve')}
                       </button>
                     </div>
                   ))}
@@ -367,15 +245,15 @@ const ParkeoYaLanding = () => {
       <section id="como-funciona" className="section section-alt">
         <div className="section-container">
           <div className="section-header">
-            <h2 className="section-title">Tecnología IoT que Funciona</h2>
-            <p className="section-description">Sensores inteligentes para una experiencia sin fricciones</p>
+            <h2 className="section-title">{t('features.title')}</h2>
+            <p className="section-description">{t('features.subtitle')}</p>
           </div>
           <div className="feature-grid">
             {features.map((feature, index) => (
               <div key={index} className="feature-card">
                 <div className="feature-icon">{feature.icon}</div>
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-description">{feature.description}</p>
+                <h3 className="feature-title">{t(feature.titleKey)}</h3>
+                <p className="feature-description">{t(feature.descriptionKey)}</p>
               </div>
             ))}
           </div>
@@ -387,34 +265,34 @@ const ParkeoYaLanding = () => {
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Quiénes Somos
+              {t('about.badge')}
             </div>
-            <h2 className="section-title">Revolucionando la Movilidad Urbana</h2>
+            <h2 className="section-title">{t('about.title')}</h2>
             <p className="section-description">
-              Somos Lorem-Ipsum-UPC, un equipo de estudiantes de Ingeniería de Software de la UPC comprometidos con crear soluciones tecnológicas que mejoren la calidad de vida en las ciudades.
+              {t('about.description')}
             </p>
           </div>
 
           <div className="about-values-grid">
             <div className="value-card">
               <Target className="value-icon" />
-              <h3 className="value-title">Misión</h3>
+              <h3 className="value-title">{t('about.mission.title')}</h3>
               <p className="value-description">
-                Revolucionar la experiencia de aparcamiento conectando a conductores y administradores mediante una plataforma inteligente que optimice el uso del espacio y reduzca tiempos de búsqueda.
+                {t('about.mission.description')}
               </p>
             </div>
             <div className="value-card">
               <Award className="value-icon" />
-              <h3 className="value-title">Visión</h3>
+              <h3 className="value-title">{t('about.vision.title')}</h3>
               <p className="value-description">
-                Consolidarnos como la startup líder en soluciones de gestión de estacionamientos a nivel nacional, aportando a la movilidad eficiente mediante tecnología innovadora y sostenible.
+                {t('about.vision.description')}
               </p>
             </div>
             <div className="value-card">
               <Globe className="value-icon" />
-              <h3 className="value-title">Valores</h3>
+              <h3 className="value-title">{t('about.values.title')}</h3>
               <p className="value-description">
-                Innovación, transparencia, sostenibilidad y compromiso con la mejora continua. Priorizamos la experiencia del usuario y el impacto positivo en el medio ambiente.
+                {t('about.values.description')}
               </p>
             </div>
           </div>
@@ -422,41 +300,41 @@ const ParkeoYaLanding = () => {
           <div className="problem-section">
             <div className="problem-grid">
               <div>
-                <h3 className="problem-title">El Problema que Resolvemos</h3>
+                <h3 className="problem-title">{t('about.problem.title')}</h3>
                 <p className="problem-description">
-                  En Lima, más de 100,000 vehículos se suman al parque automotor cada año. Los conductores pierden hasta 20 minutos buscando estacionamiento en horas pico, generando:
+                  {t('about.problem.description')}
                 </p>
                 <ul className="problem-list">
                   <li className="problem-item">
                     <CheckCircle className="problem-check" />
-                    <span>60% del tráfico en zonas céntricas por búsqueda de parking</span>
+                    <span>{t('about.problem.point1')}</span>
                   </li>
                   <li className="problem-item">
                     <CheckCircle className="problem-check" />
-                    <span>Aumento de emisiones de CO₂ y contaminación</span>
+                    <span>{t('about.problem.point2')}</span>
                   </li>
                   <li className="problem-item">
                     <CheckCircle className="problem-check" />
-                    <span>Estrés y frustración en conductores diarios</span>
+                    <span>{t('about.problem.point3')}</span>
                   </li>
                   <li className="problem-item">
                     <CheckCircle className="problem-check" />
-                    <span>Baja rentabilidad para propietarios de playas</span>
+                    <span>{t('about.problem.point4')}</span>
                   </li>
                 </ul>
               </div>
               <div className="problem-stats">
                 <div className="problem-stat-card">
                   <div className="problem-stat-number">100,000+</div>
-                  <div className="problem-stat-label">Vehículos nuevos por año en Lima</div>
+                  <div className="problem-stat-label">{t('about.problem.stat1Label')}</div>
                 </div>
                 <div className="problem-stat-card">
                   <div className="problem-stat-number">20 min</div>
-                  <div className="problem-stat-label">Tiempo promedio de búsqueda</div>
+                  <div className="problem-stat-label">{t('about.problem.stat2Label')}</div>
                 </div>
                 <div className="problem-stat-card">
                   <div className="problem-stat-number">60%</div>
-                  <div className="problem-stat-label">Del tráfico busca estacionamiento</div>
+                  <div className="problem-stat-label">{t('about.problem.stat3Label')}</div>
                 </div>
               </div>
             </div>
@@ -469,11 +347,11 @@ const ParkeoYaLanding = () => {
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Características
+              {t('detailedFeatures.badge')}
             </div>
-            <h2 className="section-title">Tecnología de Vanguardia</h2>
+            <h2 className="section-title">{t('detailedFeatures.title')}</h2>
             <p className="section-description">
-              Integramos las últimas innovaciones en IoT, edge computing y aplicaciones móviles para ofrecerte la mejor experiencia.
+              {t('detailedFeatures.description')}
             </p>
           </div>
 
@@ -481,33 +359,33 @@ const ParkeoYaLanding = () => {
             {detailedFeatures.map((feature, index) => (
               <div key={index} className="detailed-feature-card">
                 <div className="detailed-feature-icon">{feature.icon}</div>
-                <h3 className="detailed-feature-title">{feature.title}</h3>
-                <p className="detailed-feature-description">{feature.description}</p>
+                <h3 className="detailed-feature-title">{t(feature.titleKey)}</h3>
+                <p className="detailed-feature-description">{t(feature.descriptionKey)}</p>
               </div>
             ))}
           </div>
 
           <div className="tech-process">
-            <h3 className="tech-process-title">¿Cómo Funciona la Tecnología IoT?</h3>
+            <h3 className="tech-process-title">{t('detailedFeatures.techTitle')}</h3>
             <p className="tech-process-description">
-              Cada espacio de estacionamiento cuenta con sensores que detectan la presencia de vehículos. Los datos se procesan en edge servers locales y se sincronizan con la nube en tiempo real, permitiendo actualizaciones instantáneas en la aplicación.
+              {t('detailedFeatures.techDescription')}
             </p>
             <div className="tech-process-steps">
               <div className="tech-step">
                 <div className="tech-step-number">1</div>
-                <div className="tech-step-label">Sensor detecta vehículo</div>
+                <div className="tech-step-label">{t('detailedFeatures.step1')}</div>
               </div>
               <div className="tech-step">
                 <div className="tech-step-number">2</div>
-                <div className="tech-step-label">Edge server procesa</div>
+                <div className="tech-step-label">{t('detailedFeatures.step2')}</div>
               </div>
               <div className="tech-step">
                 <div className="tech-step-number">3</div>
-                <div className="tech-step-label">Cloud sincroniza</div>
+                <div className="tech-step-label">{t('detailedFeatures.step3')}</div>
               </div>
               <div className="tech-step">
                 <div className="tech-step-number">4</div>
-                <div className="tech-step-label">App actualiza</div>
+                <div className="tech-step-label">{t('detailedFeatures.step4')}</div>
               </div>
             </div>
           </div>
@@ -515,150 +393,54 @@ const ParkeoYaLanding = () => {
       </section>
 
       {/* Precios Section */}
-      <section id="precios" className="section">
+      {/* About the Product Video */}
+      <section id="about-product" className="section">
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Precios
+              {t('videos.badge')}
             </div>
-            <h2 className="section-title">Planes para Todos</h2>
+            <h2 className="section-title">{t('videos.productTitle')}</h2>
             <p className="section-description">
-              Elige el plan que mejor se adapte a tus necesidades
+              {t('videos.productDescription')}
             </p>
-            <div className="pricing-toggle">
-              <button
-                onClick={() => setSelectedPlan('conductor')}
-                className={`pricing-toggle-btn ${selectedPlan === 'conductor' ? 'active' : ''}`}
-              >
-                Para Conductores
-              </button>
-              <button
-                onClick={() => setSelectedPlan('propietario')}
-                className={`pricing-toggle-btn ${selectedPlan === 'propietario' ? 'active' : ''}`}
-              >
-                Para Propietarios
-              </button>
-            </div>
           </div>
-
-          <div className="pricing-grid" data-plan={selectedPlan}>
-            {pricingPlans[selectedPlan].map((plan, index) => (
-              <div
-                key={index}
-                className={`pricing-card ${plan.recommended ? 'recommended' : ''}`}
-              >
-                {plan.recommended && (
-                  <div className="pricing-recommended-badge">
-                    Recomendado
-                  </div>
-                )}
-                <div className="pricing-header">
-                  <h3 className="pricing-name">{plan.name}</h3>
-                  <div className="pricing-price">
-                    <span className="pricing-amount">{plan.price}</span>
-                    {plan.period && <span className="pricing-period">/ {plan.period}</span>}
-                  </div>
-                </div>
-                <ul className="pricing-features">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="pricing-feature">
-                      <CheckCircle className="pricing-feature-icon" />
-                      <span className="pricing-feature-text">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className={`pricing-cta ${plan.recommended ? 'primary' : 'secondary'}`}
-                >
-                  {plan.name === 'Enterprise' ? 'Contactar Ventas' : 'Comenzar Ahora'}
-                </button>
-              </div>
-            ))}
-          </div>
-
-          <div className="pricing-footer">
-            <p className="pricing-footer-text">
-              ¿Necesitas un plan personalizado? Contáctanos para obtener una cotización especial.
-            </p>
-            <button className="pricing-contact-link">
-              <span>Hablar con Ventas</span>
-              <ChevronRight />
-            </button>
+          <div className="video-container">
+            <iframe
+              width="100%"
+              height="500"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="About the Product"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </section>
 
-      {/* Casos de Éxito */}
-      <section id="casos-exito" className="section section-alt">
+      {/* About the Team Video */}
+      <section id="about-team" className="section section-alt">
         <div className="section-container">
           <div className="section-header">
             <div className="section-badge">
-              Casos de Éxito
+              {t('videos.badge')}
             </div>
-            <h2 className="section-title">Resultados Comprobados</h2>
+            <h2 className="section-title">{t('videos.teamTitle')}</h2>
             <p className="section-description">
-              Descubre cómo ParkeoYa ha transformado negocios reales
+              {t('videos.teamDescription')}
             </p>
           </div>
-
-          <div className="case-studies-grid">
-            {caseStudies.map((study, index) => (
-              <div key={index} className="case-study-card">
-                <div className="case-study-image">{study.image}</div>
-                <h3 className="case-study-title">{study.company}</h3>
-                <p className="case-study-location">{study.location}</p>
-                
-                <div className="case-study-results">
-                  <div className="case-study-metric">
-                    <div className="case-study-metric-value positive">{study.results.occupancy}</div>
-                    <div className="case-study-metric-label">Ocupación</div>
-                  </div>
-                  <div className="case-study-metric">
-                    <div className="case-study-metric-value positive">{study.results.revenue}</div>
-                    <div className="case-study-metric-label">Ingresos</div>
-                  </div>
-                  <div className="case-study-metric">
-                    <div className="case-study-metric-value neutral">{study.results.time}</div>
-                    <div className="case-study-metric-label">Tiempo</div>
-                  </div>
-                </div>
-
-                <p className="case-study-testimonial">"{study.testimonial}"</p>
-                <div className="case-study-author">
-                  <div className="case-study-avatar">
-                    {study.owner[0]}
-                  </div>
-                  <div className="case-study-author-info">
-                    <div className="case-study-author-name">{study.owner}</div>
-                    <div className="case-study-author-role">Propietario</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="case-study-summary">
-            <div className="text-center">
-              <h3 className="case-study-summary-title">Resultados Promedio de Nuestros Clientes</h3>
-              <div className="case-study-summary-stats">
-                <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">+24%</div>
-                  <div className="case-study-summary-label">Aumento en Ocupación</div>
-                </div>
-                <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">+29%</div>
-                  <div className="case-study-summary-label">Crecimiento en Ingresos</div>
-                </div>
-                <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">-40%</div>
-                  <div className="case-study-summary-label">Reducción de Tiempo</div>
-                </div>
-                <div className="case-study-summary-stat">
-                  <div className="case-study-summary-number">4 meses</div>
-                  <div className="case-study-summary-label">ROI Promedio</div>
-                </div>
-              </div>
-            </div>
+          <div className="video-container">
+            <iframe
+              width="100%"
+              height="500"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="About the Team"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </section>
@@ -669,23 +451,23 @@ const ParkeoYaLanding = () => {
           <div className="user-section-grid">
             <div className="user-section-content">
               <div className="section-badge">
-                Para Conductores
+                {t('drivers.badge')}
               </div>
-              <h2 className="user-section-title">Estaciona Inteligente, Ahorra Tiempo</h2>
+              <h2 className="user-section-title">{t('drivers.title')}</h2>
               <p className="user-section-description">
-                Olvídate de dar vueltas. Con ParkeoYa, encuentras y reservas tu espacio en segundos.
+                {t('drivers.description')}
               </p>
               <div className="user-benefits">
-                {conductorBenefits.map((benefit, index) => (
-                  <div key={index} className="user-benefit">
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <div key={num} className="user-benefit">
                     <CheckCircle className="user-benefit-icon" />
-                    <span className="user-benefit-text">{benefit}</span>
+                    <span className="user-benefit-text">{t(`drivers.benefit${num}`)}</span>
                   </div>
                 ))}
               </div>
               <button className="user-section-cta">
                 <Smartphone />
-                <span>Descargar App</span>
+                <span>{t('drivers.btnDownload')}</span>
                 <ChevronRight />
               </button>
             </div>
@@ -694,22 +476,22 @@ const ParkeoYaLanding = () => {
                 <div className="user-demo-benefit">
                   <Clock className="user-demo-benefit-icon" />
                   <div className="user-demo-benefit-content">
-                    <div className="user-demo-benefit-title">Ahorra 15 min diarios</div>
-                    <div className="user-demo-benefit-description">Promedio en zonas urbanas</div>
+                    <div className="user-demo-benefit-title">{t('drivers.save15')}</div>
+                    <div className="user-demo-benefit-description">{t('drivers.save15Desc')}</div>
                   </div>
                 </div>
                 <div className="user-demo-benefit">
                   <DollarSign className="user-demo-benefit-icon" />
                   <div className="user-demo-benefit-content">
-                    <div className="user-demo-benefit-title">Paga lo justo</div>
-                    <div className="user-demo-benefit-description">Cobro automático por minuto</div>
+                    <div className="user-demo-benefit-title">{t('drivers.payFair')}</div>
+                    <div className="user-demo-benefit-description">{t('drivers.payFairDesc')}</div>
                   </div>
                 </div>
                 <div className="user-demo-benefit">
                   <Shield className="user-demo-benefit-icon" />
                   <div className="user-demo-benefit-content">
-                    <div className="user-demo-benefit-title">100% Garantizado</div>
-                    <div className="user-demo-benefit-description">Compensación si falla sensor</div>
+                    <div className="user-demo-benefit-title">{t('drivers.guaranteed')}</div>
+                    <div className="user-demo-benefit-description">{t('drivers.guaranteedDesc')}</div>
                   </div>
                 </div>
               </div>
@@ -727,40 +509,40 @@ const ParkeoYaLanding = () => {
                 <div className="text-center">
                   <div className="case-study-summary-stat">
                     <div className="case-study-summary-number">+20%</div>
-                    <div className="case-study-summary-label">Aumento promedio en ocupación</div>
+                    <div className="case-study-summary-label">{t('owners.avgIncrease')}</div>
                   </div>
                 </div>
                 <div className="case-study-results">
                   <div className="case-study-metric">
                     <div className="case-study-metric-value neutral">5%</div>
-                    <div className="case-study-metric-label">Comisión por reserva</div>
+                    <div className="case-study-metric-label">{t('owners.commission')}</div>
                   </div>
                   <div className="case-study-metric">
                     <div className="case-study-metric-value neutral">24/7</div>
-                    <div className="case-study-metric-label">Monitoreo continuo</div>
+                    <div className="case-study-metric-label">{t('owners.monitoring')}</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="user-section-content">
               <div className="section-badge">
-                Para Propietarios
+                {t('owners.badge')}
               </div>
-              <h2 className="user-section-title">Maximiza tus Ingresos con IoT</h2>
+              <h2 className="user-section-title">{t('owners.title')}</h2>
               <p className="user-section-description">
-                Automatiza la gestión, aumenta ocupación y genera ingresos pasivos con nuestra plataforma.
+                {t('owners.description')}
               </p>
               <div className="user-benefits">
-                {propietarioBenefits.map((benefit, index) => (
-                  <div key={index} className="user-benefit">
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <div key={num} className="user-benefit">
                     <CheckCircle className="user-benefit-icon" />
-                    <span className="user-benefit-text">{benefit}</span>
+                    <span className="user-benefit-text">{t(`owners.benefit${num}`)}</span>
                   </div>
                 ))}
               </div>
               <button className="user-section-cta">
                 <TrendingUp />
-                <span>Registrar mi Playa</span>
+                <span>{t('owners.btnRegister')}</span>
                 <ChevronRight />
               </button>
             </div>
@@ -772,8 +554,8 @@ const ParkeoYaLanding = () => {
       <section className="section">
         <div className="section-container">
           <div className="section-header">
-            <h2 className="section-title">Lo que dicen nuestros usuarios</h2>
-            <p className="section-description">Experiencias reales, resultados medibles</p>
+            <h2 className="section-title">{t('testimonials.title')}</h2>
+            <p className="section-description">{t('testimonials.description')}</p>
           </div>
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
@@ -805,11 +587,11 @@ const ParkeoYaLanding = () => {
           <div className="contact-grid">
             <div className="contact-info">
               <div className="section-badge">
-                Contacto
+                {t('contact.badge')}
               </div>
-              <h2 className="contact-title">Hablemos de tu Proyecto</h2>
+              <h2 className="contact-title">{t('contact.title')}</h2>
               <p className="contact-description">
-                ¿Tienes preguntas? ¿Quieres una demo personalizada? Nuestro equipo está listo para ayudarte.
+                {t('contact.description')}
               </p>
 
               <div className="contact-methods">
@@ -818,7 +600,7 @@ const ParkeoYaLanding = () => {
                     <Mail className="contact-method-icon-svg" />
                   </div>
                   <div className="contact-method-content">
-                    <div className="contact-method-title">Email</div>
+                    <div className="contact-method-title">{t('contact.email')}</div>
                     <a href="mailto:contacto@parkeoya.com" className="contact-method-link">
                       contacto@parkeoya.com
                     </a>
@@ -830,7 +612,7 @@ const ParkeoYaLanding = () => {
                     <Phone className="contact-method-icon-svg" />
                   </div>
                   <div className="contact-method-content">
-                    <div className="contact-method-title">Teléfono</div>
+                    <div className="contact-method-title">{t('contact.phone')}</div>
                     <a href="tel:+51999888777" className="contact-method-link">
                       +51 999 888 777
                     </a>
@@ -842,68 +624,66 @@ const ParkeoYaLanding = () => {
                     <MapPin className="contact-method-icon-svg" />
                   </div>
                   <div className="contact-method-content">
-                    <div className="contact-method-title">Oficina</div>
+                    <div className="contact-method-title">{t('contact.office')}</div>
                     <p className="contact-method-text">
-                      Universidad Peruana de Ciencias Aplicadas<br />
-                      Av. Primavera 2390, Santiago de Surco<br />
-                      Lima, Perú
+                      {t('contact.officeAddress')}
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="contact-hours">
-                <h3 className="contact-hours-title">Horario de Atención</h3>
-                <p className="contact-hours-text">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                <p className="contact-hours-text">Sábados: 9:00 AM - 1:00 PM</p>
+                <h3 className="contact-hours-title">{t('contact.hoursTitle')}</h3>
+                <p className="contact-hours-text">{t('contact.hoursWeekday')}</p>
+                <p className="contact-hours-text">{t('contact.hoursSaturday')}</p>
               </div>
             </div>
 
             <div className="contact-form">
-              <h3 className="contact-form-title">Envíanos un Mensaje</h3>
+              <h3 className="contact-form-title">{t('contact.formTitle')}</h3>
               <form className="contact-form-fields">
                 <div className="form-field">
-                  <label className="form-label">Nombre Completo</label>
+                  <label className="form-label">{t('contact.formName')}</label>
                   <input
                     type="text"
                     className="form-input"
-                    placeholder="Juan Pérez"
+                    placeholder={t('contact.formNamePlaceholder')}
                   />
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Email</label>
+                  <label className="form-label">{t('contact.formEmail')}</label>
                   <input
                     type="email"
                     className="form-input"
-                    placeholder="juan@ejemplo.com"
+                    placeholder={t('contact.formEmailPlaceholder')}
                   />
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Teléfono</label>
+                  <label className="form-label">{t('contact.formPhone')}</label>
                   <input
                     type="tel"
                     className="form-input"
-                    placeholder="+51 999 888 777"
+                    placeholder={t('contact.formPhonePlaceholder')}
                   />
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Tipo de Usuario</label>
+                  <label className="form-label">{t('contact.formUserType')}</label>
                   <select className="form-select">
-                    <option>Conductor</option>
-                    <option>Propietario de Estacionamiento</option>
-                    <option>Empresa</option>
-                    <option>Otro</option>
+                    <option>{t('contact.formUserDriver')}</option>
+                    <option>{t('contact.formUserOwner')}</option>
+                    <option>{t('contact.formUserCompany')}</option>
+                    <option>{t('contact.formUserOther')}</option>
                   </select>
                 </div>
 
                 <div className="form-field">
-                  <label className="form-label">Mensaje</label>
+                  <label className="form-label">{t('contact.formMessage')}</label>
                   <textarea
                     className="form-textarea"
-                    placeholder="Cuéntanos cómo podemos ayudarte..."
+                    placeholder={t('contact.formMessagePlaceholder')}
                   ></textarea>
                 </div>
 
@@ -912,7 +692,7 @@ const ParkeoYaLanding = () => {
                   className="form-submit"
                 >
                   <MessageSquare />
-                  <span>Enviar Mensaje</span>
+                  <span>{t('contact.formSubmit')}</span>
                 </button>
               </form>
             </div>
@@ -924,66 +704,65 @@ const ParkeoYaLanding = () => {
       <section id="registro" className="cta-section">
         <div className="cta-container">
           <h2 className="cta-title">
-            {selectedUserType === 'conductor' && '¿Listo para encontrar estacionamiento al instante?'}
-            {selectedUserType === 'propietario' && '¿Listo para maximizar tus ingresos?'}
-            {!selectedUserType && '¿Listo para empezar?'}
+            {selectedUserType === 'conductor' && t('cta.titleDriver')}
+            {selectedUserType === 'propietario' && t('cta.titleOwner')}
+            {!selectedUserType && t('cta.titleDefault')}
           </h2>
           <p className="cta-description">
-            Únete a ParkeoYa hoy y experimenta la diferencia de la tecnología IoT
+            {t('cta.description')}
           </p>
           <div className="cta-actions">
             <button className="cta-btn-primary">
               <Users />
-              <span>Registrarme como Conductor</span>
+              <span>{t('cta.btnDriver')}</span>
             </button>
             <button className="cta-btn-secondary">
               <TrendingUp />
-              <span>Registrarme como Propietario</span>
+              <span>{t('cta.btnOwner')}</span>
             </button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer className="footer" role="contentinfo" aria-label="Site footer">
         <div className="footer-container">
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-logo">
-                <div className="footer-logo-icon">
+                <div className="footer-logo-icon" aria-hidden="true">
                   <MapPin />
                 </div>
                 <span className="footer-logo-text">ParkeoYa</span>
               </div>
-              <p className="footer-description">Estacionamiento inteligente con tecnología IoT para ciudades modernas.</p>
+              <p className="footer-description">{t('footer.description')}</p>
             </div>
             <div className="footer-section">
-              <h3 className="footer-title">Producto</h3>
-              <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('caracteristicas')} className="footer-link">Características</button></li>
-                <li><button onClick={() => scrollToSection('precios')} className="footer-link">Precios</button></li>
-                <li><button onClick={() => scrollToSection('casos-exito')} className="footer-link">Casos de Éxito</button></li>
-              </ul>
+              <h3 className="footer-title">{t('footer.product')}</h3>
+              <div className="footer-links">
+                <button onClick={() => scrollToSection('caracteristicas')} className="footer-link" aria-label={`Navigate to ${t('footer.features')}`}>{t('footer.features')}</button>
+                <button onClick={() => scrollToSection('about-product')} className="footer-link" aria-label="Navigate to About the Product">{t('videos.productTitle')}</button>
+                <button onClick={() => scrollToSection('about-team')} className="footer-link" aria-label="Navigate to About the Team">{t('videos.teamTitle')}</button>
+              </div>
             </div>
             <div className="footer-section">
-              <h3 className="footer-title">Soporte</h3>
-              <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">Centro de Ayuda</button></li>
-                <li><button onClick={() => scrollToSection('contacto')} className="footer-link">Contacto</button></li>
-                <li><button className="footer-link">FAQ</button></li>
-              </ul>
+              <h3 className="footer-title">{t('footer.support')}</h3>
+              <div className="footer-links">
+                <button onClick={() => scrollToSection('contacto')} className="footer-link" aria-label={`Navigate to ${t('footer.helpCenter')}`}>{t('footer.helpCenter')}</button>
+                <button onClick={() => scrollToSection('contacto')} className="footer-link" aria-label={`Navigate to ${t('footer.contact')}`}>{t('footer.contact')}</button>
+              </div>
             </div>
             <div className="footer-section">
-              <h3 className="footer-title">Empresa</h3>
-              <ul className="footer-links">
-                <li><button onClick={() => scrollToSection('sobre-nosotros')} className="footer-link">Sobre Nosotros</button></li>
-                <li><button className="footer-link">Blog</button></li>
-                <li><button className="footer-link">Trabaja con Nosotros</button></li>
-              </ul>
+              <h3 className="footer-title">{t('footer.company')}</h3>
+              <div className="footer-links">
+                <button onClick={() => scrollToSection('sobre-nosotros')} className="footer-link" aria-label={`Navigate to ${t('footer.about')}`}>{t('footer.about')}</button>
+                <a href="https://github.com/Lorem-Ipsum-UPC" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label={`Navigate to ${t('footer.aboutProject')}`}>{t('footer.aboutProject')}</a>
+              </div>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 ParkeoYa - Lorem Ipsum UPC. Todos los derechos reservados.</p>
+            <p>{t('footer.copyright')}</p>
+            <Link to="/terms" className="footer-link footer-terms" aria-label={`Navigate to ${t('footer.terms')}`}>{t('footer.terms')}</Link>
           </div>
         </div>
       </footer>

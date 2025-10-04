@@ -1,0 +1,381 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "features": "Características",
+    "pricing": "Precios",
+    "cases": "Casos de Éxito",
+    "contact": "Contacto",
+    "login": "Iniciar Sesión",
+    "register": "Registrarse"
+  },
+  "hero": {
+    "badge": "Tecnología IoT para Movilidad Urbana",
+    "title": "Encuentra Estacionamiento",
+    "titleHighlight": "en Tiempo Real",
+    "description": "Sensores IoT detectan disponibilidad al instante. Reserva, paga y estaciona sin dar vueltas. Optimiza tu tiempo y tus ingresos.",
+    "btnDriver": "Soy Conductor",
+    "btnOwner": "Soy Propietario",
+    "stat1": "Menos tiempo de búsqueda",
+    "stat2": "Reducción de CO₂",
+    "stat3": "Más ocupación",
+    "availableSpaces": "espacios disponibles cerca de ti",
+    "reserve": "Reservar",
+    "hour": "hora",
+    "parking1": "Estacionamiento Centro",
+    "parking2": "Plaza San Isidro",
+    "parking3": "Parqueo Express"
+  },
+  "features": {
+    "badge": "Cómo Funciona",
+    "title": "Tecnología IoT que Funciona",
+    "subtitle": "Sensores inteligentes para una experiencia sin fricciones",
+    "feature1": {
+      "title": "Disponibilidad en Tiempo Real",
+      "description": "Sensores IoT detectan espacios libres al instante. Ahorra hasta 15 minutos por búsqueda."
+    },
+    "feature2": {
+      "title": "Geolocalización Inteligente",
+      "description": "Encuentra estacionamientos cercanos con distancias exactas y navegación integrada."
+    },
+    "feature3": {
+      "title": "Reserva Garantizada",
+      "description": "Tu espacio confirmado por sensores. Sin sorpresas, sin dar vueltas."
+    },
+    "feature4": {
+      "title": "Maximiza Ingresos",
+      "description": "Para propietarios: aumenta ocupación hasta 20% con gestión automatizada."
+    }
+  },
+  "about": {
+    "badge": "Quiénes Somos",
+    "title": "Revolucionando la Movilidad Urbana",
+    "description": "Somos Lorem-Ipsum-UPC, un equipo de estudiantes de Ingeniería de Software de la UPC comprometidos con crear soluciones tecnológicas que mejoren la calidad de vida en las ciudades.",
+    "mission": {
+      "title": "Misión",
+      "description": "Revolucionar la experiencia de aparcamiento conectando a conductores y administradores mediante una plataforma inteligente que optimice el uso del espacio y reduzca tiempos de búsqueda."
+    },
+    "vision": {
+      "title": "Visión",
+      "description": "Consolidarnos como la startup líder en soluciones de gestión de estacionamientos a nivel nacional, aportando a la movilidad eficiente mediante tecnología innovadora y sostenible."
+    },
+    "values": {
+      "title": "Valores",
+      "description": "Innovación, transparencia, sostenibilidad y compromiso con la mejora continua. Priorizamos la experiencia del usuario y el impacto positivo en el medio ambiente."
+    },
+    "problem": {
+      "title": "El Problema que Resolvemos",
+      "description": "En Lima, más de 100,000 vehículos se suman al parque automotor cada año. Los conductores pierden hasta 20 minutos buscando estacionamiento en horas pico, generando:",
+      "point1": "60% del tráfico en zonas céntricas por búsqueda de parking",
+      "point2": "Aumento de emisiones de CO₂ y contaminación",
+      "point3": "Estrés y frustración en conductores diarios",
+      "point4": "Baja rentabilidad para propietarios de playas",
+      "stat1Label": "Vehículos nuevos por año en Lima",
+      "stat2Label": "Tiempo promedio de búsqueda",
+      "stat3Label": "Del tráfico busca estacionamiento"
+    }
+  },
+  "detailedFeatures": {
+    "badge": "Características",
+    "title": "Tecnología de Vanguardia",
+    "description": "Integramos las últimas innovaciones en IoT, edge computing y aplicaciones móviles para ofrecerte la mejor experiencia.",
+    "feature1": {
+      "title": "Sensores IoT Avanzados",
+      "description": "Tecnología de detección en tiempo real con precisión del 99.9%. Cada espacio cuenta con sensores que comunican su estado instantáneamente."
+    },
+    "feature2": {
+      "title": "App Multiplataforma",
+      "description": "Experiencia fluida en iOS, Android y Web. Sincronización automática entre todos tus dispositivos."
+    },
+    "feature3": {
+      "title": "Notificaciones Inteligentes",
+      "description": "Alertas personalizables para vencimiento de reserva, nuevos espacios cercanos y promociones especiales."
+    },
+    "feature4": {
+      "title": "Pagos Seguros",
+      "description": "Transacciones encriptadas con los más altos estándares de seguridad. Múltiples métodos de pago disponibles."
+    },
+    "feature5": {
+      "title": "Analytics en Tiempo Real",
+      "description": "Dashboard completo con métricas de ocupación, ingresos y tendencias. Reportes descargables en Excel."
+    },
+    "feature6": {
+      "title": "Edge Computing",
+      "description": "Procesamiento distribuido para respuestas instantáneas incluso sin conexión a internet."
+    },
+    "techTitle": "¿Cómo Funciona la Tecnología IoT?",
+    "techDescription": "Cada espacio de estacionamiento cuenta con sensores que detectan la presencia de vehículos. Los datos se procesan en edge servers locales y se sincronizan con la nube en tiempo real, permitiendo actualizaciones instantáneas en la aplicación.",
+    "step1": "Sensor detecta vehículo",
+    "step2": "Edge server procesa",
+    "step3": "Cloud sincroniza",
+    "step4": "App actualiza"
+  },
+  "pricing": {
+    "badge": "Precios",
+    "title": "Planes para Todos",
+    "description": "Elige el plan que mejor se adapte a tus necesidades",
+    "toggleDriver": "Para Conductores",
+    "toggleOwner": "Para Propietarios",
+    "recommended": "Recomendado",
+    "btnStart": "Comenzar Ahora",
+    "btnContact": "Contactar Ventas",
+    "footerText": "¿Necesitas un plan personalizado? Contáctanos para obtener una cotización especial.",
+    "footerLink": "Hablar con Ventas",
+    "driver": {
+      "basic": {
+        "name": "Básico",
+        "price": "Gratis",
+        "period": "siempre",
+        "feature1": "Búsqueda ilimitada de estacionamientos",
+        "feature2": "Reservas en tiempo real",
+        "feature3": "Pago por uso (sin comisiones)",
+        "feature4": "Historial de reservas",
+        "feature5": "Soporte por email"
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "S/ 9.90",
+        "period": "mes",
+        "feature1": "Todo lo del plan Básico",
+        "feature2": "Descuentos exclusivos (hasta 15%)",
+        "feature3": "Reservas prioritarias",
+        "feature4": "Sin anuncios",
+        "feature5": "Soporte prioritario 24/7",
+        "feature6": "Programa de fidelización"
+      }
+    },
+    "owner": {
+      "starter": {
+        "name": "Starter",
+        "price": "S/ 49",
+        "period": "mes",
+        "feature1": "Hasta 20 espacios",
+        "feature2": "Comisión 5% por reserva",
+        "feature3": "1 Edge Server incluido",
+        "feature4": "Dashboard básico",
+        "feature5": "Soporte por email",
+        "feature6": "Sensores IoT (alquiler incluido)"
+      },
+      "business": {
+        "name": "Business",
+        "price": "S/ 149",
+        "period": "mes",
+        "feature1": "Hasta 100 espacios",
+        "feature2": "Comisión 4% por reserva",
+        "feature3": "3 Edge Servers incluidos",
+        "feature4": "Analytics avanzado",
+        "feature5": "Soporte prioritario",
+        "feature6": "API access",
+        "feature7": "Reportes personalizados"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Personalizado",
+        "feature1": "Espacios ilimitados",
+        "feature2": "Comisión negociable",
+        "feature3": "Infraestructura dedicada",
+        "feature4": "Soporte 24/7 dedicado",
+        "feature5": "Integración personalizada",
+        "feature6": "SLA garantizado",
+        "feature7": "Consultoría incluida"
+      }
+    }
+  },
+  "cases": {
+    "badge": "Casos de Éxito",
+    "title": "Resultados Comprobados",
+    "description": "Descubre cómo ParkeoYa ha transformado negocios reales",
+    "occupancy": "Ocupación",
+    "revenue": "Ingresos",
+    "time": "Tiempo",
+    "owner": "Propietario",
+    "summaryTitle": "Resultados Promedio de Nuestros Clientes",
+    "avgOccupancy": "Aumento en Ocupación",
+    "avgRevenue": "Crecimiento en Ingresos",
+    "avgTime": "Reducción de Tiempo",
+    "avgROI": "ROI Promedio"
+  },
+  "drivers": {
+    "badge": "Para Conductores",
+    "title": "Estaciona Inteligente, Ahorra Tiempo",
+    "description": "Olvídate de dar vueltas. Con ParkeoYa, encuentras y reservas tu espacio en segundos.",
+    "benefit1": "Encuentra estacionamiento en segundos",
+    "benefit2": "Reserva anticipada con código QR",
+    "benefit3": "Pago automático por tiempo real",
+    "benefit4": "Notificaciones de vencimiento",
+    "benefit5": "Historial y reseñas de estacionamientos",
+    "btnDownload": "Descargar App",
+    "save15": "Ahorra 15 min diarios",
+    "save15Desc": "Promedio en zonas urbanas",
+    "payFair": "Paga lo justo",
+    "payFairDesc": "Cobro automático por minuto",
+    "guaranteed": "100% Garantizado",
+    "guaranteedDesc": "Compensación si falla sensor"
+  },
+  "owners": {
+    "badge": "Para Propietarios",
+    "title": "Maximiza tus Ingresos con IoT",
+    "description": "Automatiza la gestión, aumenta ocupación y genera ingresos pasivos con nuestra plataforma.",
+    "benefit1": "Panel de control con métricas en tiempo real",
+    "benefit2": "Gestión automatizada de espacios",
+    "benefit3": "Reportes de ingresos y ocupación",
+    "benefit4": "Comisión transparente del 5%",
+    "benefit5": "Instalación de sensores IoT incluida",
+    "btnRegister": "Registrar mi Playa",
+    "avgIncrease": "Aumento promedio en ocupación",
+    "commission": "Comisión por reserva",
+    "monitoring": "Monitoreo continuo"
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros usuarios",
+    "description": "Experiencias reales, resultados medibles"
+  },
+  "contact": {
+    "badge": "Contacto",
+    "title": "Hablemos de tu Proyecto",
+    "description": "¿Tienes preguntas? ¿Quieres una demo personalizada? Nuestro equipo está listo para ayudarte.",
+    "email": "Email",
+    "phone": "Teléfono",
+    "office": "Oficina",
+    "officeAddress": "Universidad Peruana de Ciencias Aplicadas\nAv. Primavera 2390, Santiago de Surco\nLima, Perú",
+    "hoursTitle": "Horario de Atención",
+    "hoursWeekday": "Lunes a Viernes: 9:00 AM - 6:00 PM",
+    "hoursSaturday": "Sábados: 9:00 AM - 1:00 PM",
+    "formTitle": "Envíanos un Mensaje",
+    "formName": "Nombre Completo",
+    "formNamePlaceholder": "Juan Pérez",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "juan@ejemplo.com",
+    "formPhone": "Teléfono",
+    "formPhonePlaceholder": "+51 999 888 777",
+    "formUserType": "Tipo de Usuario",
+    "formUserDriver": "Conductor",
+    "formUserOwner": "Propietario de Estacionamiento",
+    "formUserCompany": "Empresa",
+    "formUserOther": "Otro",
+    "formMessage": "Mensaje",
+    "formMessagePlaceholder": "Cuéntanos cómo podemos ayudarte...",
+    "formSubmit": "Enviar Mensaje"
+  },
+  "cta": {
+    "titleDriver": "¿Listo para encontrar estacionamiento al instante?",
+    "titleOwner": "¿Listo para maximizar tus ingresos?",
+    "titleDefault": "¿Listo para empezar?",
+    "description": "Únete a ParkeoYa hoy y experimenta la diferencia de la tecnología IoT",
+    "btnDriver": "Registrarme como Conductor",
+    "btnOwner": "Registrarme como Propietario"
+  },
+  "footer": {
+    "description": "Estacionamiento inteligente con tecnología IoT para ciudades modernas.",
+    "product": "Producto",
+    "features": "Características",
+    "pricing": "Precios",
+    "cases": "Casos de Éxito",
+    "support": "Soporte",
+    "helpCenter": "Centro de Ayuda",
+    "contact": "Contacto",
+    "faq": "FAQ",
+    "company": "Empresa",
+    "about": "Sobre Nosotros",
+    "blog": "Blog",
+    "careers": "Trabaja con Nosotros",
+    "terms": "Términos y Condiciones",
+    "aboutProject": "Sobre el Proyecto",
+    "copyright": "© 2025 ParkeoYa - Lorem Ipsum UPC. Todos los derechos reservados."
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "subtitle": "Acuerdo de Usuario",
+    "lastUpdated": "Última Actualización",
+    "date": "4 de Octubre de 2025",
+    "backHome": "Volver al Inicio",
+    "acceptance": {
+      "title": "1. Aceptación de Términos",
+      "content": "Al usar ParkeoYa, aceptas estos Términos y Condiciones. Este servicio se proporciona bajo los principios de ética profesional de ACM, IEEE y CIP (Colegio de Ingenieros del Perú), asegurando calidad, transparencia y protección al usuario."
+    },
+    "service": {
+      "title": "2. Uso del Servicio",
+      "content": "ParkeoYa proporciona una plataforma para buscar, reservar y pagar espacios de estacionamiento en tiempo real mediante tecnología IoT. Los usuarios acuerdan usar el servicio de manera legal y responsable, respetando las regulaciones de estacionamiento y los derechos de otros usuarios."
+    },
+    "responsibilities": {
+      "title": "3. Responsabilidades del Usuario",
+      "content": "Los usuarios deben proporcionar información precisa, cumplir con las regulaciones de estacionamiento y usar la plataforma de manera ética. Los conductores deben respetar los horarios de reserva, y los propietarios deben asegurar que sus espacios estén correctamente gestionados y disponibles."
+    },
+    "privacy": {
+      "title": "4. Privacidad y Protección de Datos",
+      "content": "Protegemos tus datos personales según la normativa vigente. Recopilamos solo la información necesaria para proporcionar el servicio y nunca la compartiremos con terceros sin tu consentimiento. Consulta nuestra Política de Privacidad para más detalles."
+    },
+    "modifications": {
+      "title": "5. Modificaciones",
+      "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Los usuarios serán notificados de cambios significativos por correo electrónico o a través de la plataforma. El uso continuo después de las modificaciones constituye la aceptación de los nuevos términos."
+    },
+    "ethics": {
+      "title": "Ética Profesional",
+      "content": "Este proyecto se desarrolla bajo los principios éticos de ACM, IEEE y CIP, comprometiéndonos con la integridad, transparencia, responsabilidad social y excelencia en el servicio."
+    }
+  },
+  "videos": {
+    "badge": "Mira y Aprende",
+    "productTitle": "Sobre el Producto",
+    "productDescription": "Descubre cómo ParkeoYa revoluciona el estacionamiento urbano con tecnología IoT",
+    "teamTitle": "Conoce al Equipo",
+    "teamDescription": "Conoce al equipo detrás de ParkeoYa y nuestro proceso de desarrollo"
+  },
+  "aboutProject": {
+    "title": "Sobre el Proyecto",
+    "subtitle": "Ciclo de Vida de Desarrollo y Tecnología",
+    "backToTop": "Volver Arriba",
+    "scrum": {
+      "title": "Ciclo de Vida de Desarrollo Scrum",
+      "intro": "ParkeoYa fue desarrollado siguiendo la metodología ágil Scrum, que nos permitió entregar valor de manera incremental y adaptarnos a los cambios eficientemente.",
+      "phase1": {
+        "title": "Planificación del Sprint",
+        "description": "Definimos historias de usuario y priorizamos funcionalidades basándonos en el valor para el usuario y la viabilidad técnica."
+      },
+      "phase2": {
+        "title": "Daily Standups",
+        "description": "Reuniones diarias de sincronización para identificar bloqueadores y mantener la alineación del equipo."
+      },
+      "phase3": {
+        "title": "Desarrollo del Sprint",
+        "description": "Sprints de 2 semanas donde implementamos funcionalidades, realizamos revisiones de código y pruebas continuas."
+      },
+      "phase4": {
+        "title": "Revisión del Sprint",
+        "description": "Demostraciones de funcionalidad completada a los stakeholders y recopilación de feedback."
+      },
+      "phase5": {
+        "title": "Retrospectiva del Sprint",
+        "description": "Reflexión del equipo para identificar mejoras y optimizar el proceso de desarrollo."
+      }
+    },
+    "github": {
+      "title": "Control de Versiones con GitHub",
+      "intro": "Usamos GitHub como nuestra plataforma de desarrollo colaborativo y sistema de control de versiones:",
+      "feature1": {
+        "title": "Estrategia de Branching",
+        "description": "Implementamos GitFlow con ramas main, develop y feature para un flujo de trabajo organizado."
+      },
+      "feature2": {
+        "title": "Pull Requests",
+        "description": "Todos los cambios pasan por revisión de código antes de fusionarse para asegurar calidad y compartir conocimiento."
+      },
+      "feature3": {
+        "title": "Integración Continua",
+        "description": "Pruebas automatizadas se ejecutan en cada commit para mantener la estabilidad del código."
+      },
+      "feature4": {
+        "title": "Seguimiento de Issues",
+        "description": "Gestionamos bugs, funcionalidades y tareas a través de GitHub Issues con etiquetas y asignaciones claras."
+      }
+    },
+    "team": {
+      "title": "Equipo de Desarrollo",
+      "description": "ParkeoYa es desarrollado por Lorem-Ipsum-UPC, un equipo de estudiantes de Ingeniería de Software de la UPC comprometidos con aplicar las mejores prácticas en desarrollo de software y ética profesional."
+    },
+    "footer": {
+      "title": "Compromiso con la Excelencia",
+      "description": "Estamos comprometidos con el aprendizaje y mejora continua, aplicando estándares profesionales y entregando soluciones de calidad que generen un impacto positivo en la movilidad urbana."
+    }
+  }
+}
