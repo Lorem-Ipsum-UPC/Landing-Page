@@ -739,9 +739,6 @@ const ParkeoYaLanding = () => {
         <div className="section-container">
           <div className="contact-grid">
             <div className="contact-info">
-              <div className="section-badge">
-                {t('contact.badge', 'Contacto')}
-              </div>
               <h2 className="contact-title">{t('contact.title', 'Hablemos de tu Proyecto')}</h2>
               <p className="contact-description">
                 {t('contact.description', '¿Tienes preguntas? ¿Quieres una demo personalizada? Nuestro equipo está listo para ayudarte.')}
