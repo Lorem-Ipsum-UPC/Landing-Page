@@ -8,7 +8,85 @@ const ParkeoYaLanding = () => {
   const { t, i18n } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedUserType, setSelectedUserType] = useState(null);
-  const [selectedPlan, setSelectedPlan] = useState('conductor');
+  
+  // Estados del formulario de contacto
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    userType: '',
+    message: ''
+  });
+  const [formErrors, setFormErrors] = useState({});
+
+  // Funciones de validación y manejo del formulario
+  const handleNameChange = (e) => {
+    // Solo permitir letras y espacios, convertir a mayúsculas
+    const value = e.target.value.replace(/[^a-zA-ZáéíóúñÑ\s]/g, '').toUpperCase();
+    setFormData(prev => ({ ...prev, name: value }));
+    
+    // Validar que no esté vacío
+    if (value.trim() === '') {
+      setFormErrors(prev => ({ ...prev, name: t('contact.form.validation.nameRequired', 'El nombre es requerido') }));
+    } else {
+      setFormErrors(prev => ({ ...prev, name: '' }));
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setFormData(prev => ({ ...prev, email: value }));
+    
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (value === '') {
+      setFormErrors(prev => ({ ...prev, email: t('contact.form.validation.emailRequired', 'El email es requerido') }));
+    } else if (!emailRegex.test(value)) {
+      setFormErrors(prev => ({ ...prev, email: t('contact.form.validation.emailInvalid', 'Debe contener una @ y un formato válido') }));
+    } else {
+      setFormErrors(prev => ({ ...prev, email: '' }));
+    }
+  };
+
+  const handlePhoneChange = (e) => {
+    // Solo permitir números, espacios, guiones y el símbolo +
+    const value = e.target.value.replace(/[^0-9+\-\s]/g, '');
+    setFormData(prev => ({ ...prev, phone: value }));
+    
+    // Validar que tenga al menos 7 dígitos
+    const digitsOnly = value.replace(/[^0-9]/g, '');
+    if (value === '') {
+      setFormErrors(prev => ({ ...prev, phone: t('contact.form.validation.phoneRequired', 'El teléfono es requerido') }));
+    } else if (digitsOnly.length < 7) {
+      setFormErrors(prev => ({ ...prev, phone: t('contact.form.validation.phoneInvalid', 'Debe contener al menos 7 dígitos') }));
+    } else {
+      setFormErrors(prev => ({ ...prev, phone: '' }));
+    }
+  };
+
+  const handleSelectChange = (e) => {
+    const value = e.target.value;
+    setFormData(prev => ({ ...prev, userType: value }));
+    
+    // Validar que se haya seleccionado una opción
+    if (value === '') {
+      setFormErrors(prev => ({ ...prev, userType: t('contact.form.validation.userTypeRequired', 'Debe seleccionar un tipo de usuario') }));
+    } else {
+      setFormErrors(prev => ({ ...prev, userType: '' }));
+    }
+  };
+
+  const handleMessageChange = (e) => {
+    const value = e.target.value;
+    setFormData(prev => ({ ...prev, message: value }));
+    
+    // Validar que no esté vacío
+    if (value.trim() === '') {
+      setFormErrors(prev => ({ ...prev, message: t('contact.form.validation.messageRequired', 'El mensaje es requerido') }));
+    } else {
+      setFormErrors(prev => ({ ...prev, message: '' }));
+    }
+  };
 
   const features = [
     {
@@ -66,47 +144,7 @@ const ParkeoYaLanding = () => {
     }
   ];
 
-  const getPricingPlans = () => ({
-    conductor: [
-      {
-        name: t('pricing.conductor.basic.name'),
-        price: t('pricing.conductor.basic.price'),
-        period: t('pricing.conductor.basic.period'),
-        features: t('pricing.conductor.basic.features', { returnObjects: true }),
-        recommended: false
-      },
-      {
-        name: t('pricing.conductor.premium.name'),
-        price: t('pricing.conductor.premium.price'),
-        period: t('pricing.conductor.premium.period'),
-        features: t('pricing.conductor.premium.features', { returnObjects: true }),
-        recommended: true
-      }
-    ],
-    propietario: [
-      {
-        name: t('pricing.propietario.starter.name'),
-        price: t('pricing.propietario.starter.price'),
-        period: t('pricing.propietario.starter.period'),
-        features: t('pricing.propietario.starter.features', { returnObjects: true }),
-        recommended: false
-      },
-      {
-        name: t('pricing.propietario.business.name'),
-        price: t('pricing.propietario.business.price'),
-        period: t('pricing.propietario.business.period'),
-        features: t('pricing.propietario.business.features', { returnObjects: true }),
-        recommended: true
-      },
-      {
-        name: t('pricing.propietario.enterprise.name'),
-        price: t('pricing.propietario.enterprise.price'),
-        period: t('pricing.propietario.enterprise.period'),
-        features: t('pricing.propietario.enterprise.features', { returnObjects: true }),
-        recommended: false
-      }
-    ]
-  });
+
 
   const getCaseStudies = () => [
     {
@@ -192,7 +230,6 @@ const ParkeoYaLanding = () => {
               <button onClick={() => scrollToSection('inicio')} className="nav-button">{t('nav.inicio', 'Inicio')}</button>
               <button onClick={() => scrollToSection('sobre-nosotros')} className="nav-button">{t('nav.sobreNosotros', 'Sobre Nosotros')}</button>
               <button onClick={() => scrollToSection('caracteristicas')} className="nav-button">{t('nav.caracteristicas', 'Características')}</button>
-              <button onClick={() => scrollToSection('precios')} className="nav-button">{t('nav.precios', 'Precios')}</button>
               <button onClick={() => scrollToSection('casos-exito')} className="nav-button">{t('nav.casosExito', 'Casos de Éxito')}</button>
               <button onClick={() => scrollToSection('contacto')} className="nav-button">{t('nav.contacto', 'Contacto')}</button>
             </div>
@@ -224,7 +261,6 @@ const ParkeoYaLanding = () => {
               <button onClick={() => scrollToSection('inicio')} className="mobile-menu-item">{t('nav.inicio', 'Inicio')}</button>
               <button onClick={() => scrollToSection('sobre-nosotros')} className="mobile-menu-item">{t('nav.sobreNosotros', 'Sobre Nosotros')}</button>
               <button onClick={() => scrollToSection('caracteristicas')} className="mobile-menu-item">{t('nav.caracteristicas', 'Características')}</button>
-              <button onClick={() => scrollToSection('precios')} className="mobile-menu-item">{t('nav.precios', 'Precios')}</button>
               <button onClick={() => scrollToSection('casos-exito')} className="mobile-menu-item">{t('nav.casosExito', 'Casos de Éxito')}</button>
               <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item">{t('nav.contacto', 'Contacto')}</button>
               <div className="mobile-menu-actions">
@@ -302,7 +338,7 @@ const ParkeoYaLanding = () => {
                         <MapPin />
                         <div className="demo-parking-details">
                           <div className="demo-parking-name">{name}</div>
-                          <div className="demo-parking-meta">{150 + i * 50}m • S/ {3 + i}/hora</div>
+                          <div className="demo-parking-meta">{150 + i * 50}{t('hero.demoDistance', 'm')} • {t('hero.demoPrice', 'S/')} {3 + i}/{t('hero.demoPriceUnit', 'hora')}</div>
                         </div>
                       </div>
                       <button className="demo-reserve-btn">
@@ -455,76 +491,7 @@ const ParkeoYaLanding = () => {
         </div>
       </section>
 
-      {/* Precios Section */}
-      <section id="precios" className="section">
-        <div className="section-container">
-          <div className="section-header">
-            <h2 className="section-title">{t('pricing.title')}</h2>
-            <p className="section-description">
-              {t('pricing.subtitle')}
-            </p>
-            <div className="pricing-toggle">
-              <button
-                onClick={() => setSelectedPlan('conductor')}
-                className={`pricing-toggle-btn ${selectedPlan === 'conductor' ? 'active' : ''}`}
-              >
-                {t('pricing.conductorTab')}
-              </button>
-              <button
-                onClick={() => setSelectedPlan('propietario')}
-                className={`pricing-toggle-btn ${selectedPlan === 'propietario' ? 'active' : ''}`}
-              >
-                {t('pricing.propietarioTab')}
-              </button>
-            </div>
-          </div>
 
-          <div className="pricing-grid" data-plan={selectedPlan}>
-            {getPricingPlans()[selectedPlan].map((plan, index) => (
-              <div
-                key={index}
-                className={`pricing-card ${plan.recommended ? 'recommended' : ''}`}
-              >
-                {plan.recommended && (
-                  <div className="pricing-recommended-badge">
-                    {t('pricing.recommended')}
-                  </div>
-                )}
-                <div className="pricing-header">
-                  <h3 className="pricing-name">{plan.name}</h3>
-                  <div className="pricing-price">
-                    <span className="pricing-amount">{plan.price}</span>
-                    {plan.period && <span className="pricing-period">/ {plan.period}</span>}
-                  </div>
-                </div>
-                <ul className="pricing-features">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="pricing-feature">
-                      <CheckCircle className="pricing-feature-icon" />
-                      <span className="pricing-feature-text">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className={`pricing-cta ${plan.recommended ? 'primary' : 'secondary'}`}
-                >
-                  {plan.name === t('pricing.propietario.enterprise.name') ? t('pricing.contactBtn') : t('pricing.selectBtn')}
-                </button>
-              </div>
-            ))}
-          </div>
-
-          <div className="pricing-footer">
-            <p className="pricing-footer-text">
-              {t('pricingFooter.question', '¿Necesitas un plan personalizado? Contáctanos para obtener una cotización especial.')}
-            </p>
-            <button className="pricing-contact-link">
-              <span>{t('pricingFooter.contactSales', 'Hablar con Ventas')}</span>
-              <ChevronRight />
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Casos de Éxito */}
       <section id="casos-exito" className="section section-alt">
@@ -798,45 +765,61 @@ const ParkeoYaLanding = () => {
                   <label className="form-label">{t('contact.form.fields.name', 'Nombre Completo')}</label>
                   <input
                     type="text"
-                    className="form-input"
+                    className={`form-input ${formErrors.name ? 'form-input-error' : ''}`}
                     placeholder={t('contact.form.fields.namePlaceholder', 'Juan Pérez')}
+                    value={formData.name}
+                    onChange={handleNameChange}
                   />
+                  {formErrors.name && <div className="form-error">{formErrors.name}</div>}
                 </div>
 
                 <div className="form-field">
                   <label className="form-label">{t('contact.form.fields.email', 'Email')}</label>
                   <input
                     type="email"
-                    className="form-input"
+                    className={`form-input ${formErrors.email ? 'form-input-error' : ''}`}
                     placeholder={t('contact.form.fields.emailPlaceholder', 'juan@ejemplo.com')}
+                    value={formData.email}
+                    onChange={handleEmailChange}
                   />
+                  {formErrors.email && <div className="form-error">{formErrors.email}</div>}
                 </div>
 
                 <div className="form-field">
                   <label className="form-label">{t('contact.form.fields.phone', 'Teléfono')}</label>
                   <input
                     type="tel"
-                    className="form-input"
+                    className={`form-input ${formErrors.phone ? 'form-input-error' : ''}`}
                     placeholder={t('contact.form.fields.phonePlaceholder', '+51 999 888 777')}
+                    value={formData.phone}
+                    onChange={handlePhoneChange}
                   />
+                  {formErrors.phone && <div className="form-error">{formErrors.phone}</div>}
                 </div>
 
                 <div className="form-field">
                   <label className="form-label">{t('contact.form.fields.userType', 'Tipo de Usuario')}</label>
-                  <select className="form-select">
-                    <option>{t('contact.form.fields.userTypes.conductor', 'Conductor')}</option>
-                    <option>{t('contact.form.fields.userTypes.propietario', 'Propietario de Estacionamiento')}</option>
-                    <option>{t('contact.form.fields.userTypes.empresa', 'Empresa')}</option>
-                    <option>{t('contact.form.fields.userTypes.otro', 'Otro')}</option>
+                  <select 
+                    className={`form-select ${formErrors.userType ? 'form-input-error' : ''}`}
+                    value={formData.userType}
+                    onChange={handleSelectChange}
+                  >
+                    <option value="">{t('contact.form.fields.userTypes.select', 'Selecciona una opción')}</option>
+                    <option value="conductor">{t('contact.form.fields.userTypes.conductor', 'Conductor')}</option>
+                    <option value="propietario">{t('contact.form.fields.userTypes.propietario', 'Propietario de Estacionamiento')}</option>
                   </select>
+                  {formErrors.userType && <div className="form-error">{formErrors.userType}</div>}
                 </div>
 
                 <div className="form-field">
                   <label className="form-label">{t('contact.form.fields.message', 'Mensaje')}</label>
                   <textarea
-                    className="form-textarea"
+                    className={`form-textarea ${formErrors.message ? 'form-input-error' : ''}`}
                     placeholder={t('contact.form.fields.messagePlaceholder', 'Cuéntanos cómo podemos ayudarte...')}
-                  ></textarea>
+                    value={formData.message}
+                    onChange={handleMessageChange}
+                  />
+                  {formErrors.message && <div className="form-error">{formErrors.message}</div>}
                 </div>
 
                 <button
@@ -882,7 +865,7 @@ const ParkeoYaLanding = () => {
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-logo">
-                <div className="footer-logo-icon">
+                <div className="logo">
                   <MapPin />
                 </div>
                 <span className="footer-logo-text">ParkeoYa</span>
@@ -893,7 +876,6 @@ const ParkeoYaLanding = () => {
               <h3 className="footer-title">{t('footer.sections.product', 'Producto')}</h3>
               <ul className="footer-links">
                 <ul><button onClick={() => scrollToSection('caracteristicas')} className="footer-link">{t('footer.links.features', 'Características')}</button></ul>
-                <ul><button onClick={() => scrollToSection('precios')} className="footer-link">{t('footer.links.pricing', 'Precios')}</button></ul>
                 <ul><button onClick={() => scrollToSection('casos-exito')} className="footer-link">{t('footer.links.caseStudies', 'Casos de Éxito')}</button></ul>
               </ul>
             </div>

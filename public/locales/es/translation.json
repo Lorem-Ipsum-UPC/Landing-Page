@@ -22,7 +22,10 @@
       "occupancy": "Más ocupación"
     },
     "demoStatus": "espacios disponibles cerca de ti",
-    "reserveBtn": "Reservar"
+    "reserveBtn": "Reservar",
+    "demoDistance": "m",
+    "demoPrice": "S/",
+    "demoPriceUnit": "hora"
   },
   "features": {
     "title": "Tecnología IoT que Funciona",
@@ -280,6 +283,7 @@
         "phonePlaceholder": "+51 999 888 777",
         "userType": "Tipo de Usuario",
         "userTypes": {
+          "select": "Selecciona una opción",
           "conductor": "Conductor",
           "propietario": "Propietario de Estacionamiento",
           "empresa": "Empresa",
@@ -288,7 +292,16 @@
         "message": "Mensaje",
         "messagePlaceholder": "Cuéntanos cómo podemos ayudarte..."
       },
-      "submitBtn": "Enviar Mensaje"
+      "submitBtn": "Enviar Mensaje",
+      "validation": {
+        "nameRequired": "El nombre es requerido",
+        "emailRequired": "El email es requerido",
+        "emailInvalid": "Debe contener una @ y un formato válido",
+        "phoneRequired": "El teléfono es requerido", 
+        "phoneInvalid": "Debe contener al menos 7 dígitos",
+        "userTypeRequired": "Debe seleccionar un tipo de usuario",
+        "messageRequired": "El mensaje es requerido"
+      }
     }
   },
   "cta": {

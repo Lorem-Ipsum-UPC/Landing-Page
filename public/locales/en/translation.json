@@ -22,7 +22,10 @@
       "occupancy": "More occupancy"
     },
     "demoStatus": "spaces available near you",
-    "reserveBtn": "Reserve"
+    "reserveBtn": "Reserve",
+    "demoDistance": "m",
+    "demoPrice": "$",
+    "demoPriceUnit": "hour"
   },
   "features": {
     "title": "IoT Technology That Works",
@@ -279,6 +282,7 @@
         "phonePlaceholder": "+51 999 888 777",
         "userType": "User Type",
         "userTypes": {
+          "select": "Select an option",
           "conductor": "Driver",
           "propietario": "Parking Owner",
           "empresa": "Company",
@@ -287,7 +291,16 @@
         "message": "Message",
         "messagePlaceholder": "Tell us how we can help you..."
       },
-      "submitBtn": "Send Message"
+      "submitBtn": "Send Message",
+      "validation": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Must contain an @ and valid format",
+        "phoneRequired": "Phone is required",
+        "phoneInvalid": "Must contain at least 7 digits", 
+        "userTypeRequired": "Must select a user type",
+        "messageRequired": "Message is required"
+      }
     }
   },
   "cta": {
