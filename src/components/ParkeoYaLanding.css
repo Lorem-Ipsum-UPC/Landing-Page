@@ -126,6 +126,7 @@
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-outline:hover {
@@ -141,6 +142,7 @@
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -403,11 +405,24 @@
   border-radius: 8px;
 }
 
+@media (max-width: 380px) {
+  .demo-parking-item {
+    display: block;
+  }
+}
+
 .demo-parking-info {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
+
+@media (max-width: 380px) {
+  .demo-parking-info {
+    justify-content: center;
+  }
+}
+
 
 .demo-parking-details {
   display: flex;
@@ -433,6 +448,14 @@
   font-size: 0.875rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+@media (max-width: 380px) {
+  .demo-reserve-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }
 
 .demo-reserve-btn:hover {
@@ -1839,6 +1862,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.btn-conductor-sec {
+  text-decoration: none;
+  color: white;
 }
 
 .cta-btn-secondary:hover {

@@ -236,12 +236,12 @@ const ParkeoYaLanding = () => {
 
             <div className="nav-actions">
               <LanguageSelector />
-              <button className="btn-outline">
+              <a href="https://parkeoya.vercel.app/login" rel="noopener noreferrer" target='_blank' className="btn-outline">
                 {t('nav.iniciarSesion', 'Iniciar Sesión')}
-              </button>
-              <button className="btn-primary">
+              </a>
+              <a href="https://parkeoya.vercel.app/register" rel="noopener noreferrer" target='_blank' className="btn-primary">
                 {t('nav.registrarse', 'Registrarse')}
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -265,8 +265,8 @@ const ParkeoYaLanding = () => {
               <button onClick={() => scrollToSection('contacto')} className="mobile-menu-item">{t('nav.contacto', 'Contacto')}</button>
               <div className="mobile-menu-actions">
                 <LanguageSelector />
-                <button className="btn-outline">{t('nav.iniciarSesion', 'Iniciar Sesión')}</button>
-                <button className="btn-primary">{t('nav.registrarse', 'Registrarse')}</button>
+                <a href="https://parkeoya.vercel.app/login" rel="noopener noreferrer" target='_blank' className="btn-outline">{t('nav.iniciarSesion', 'Iniciar Sesión')}</a>
+                <a href="https://parkeoya.vercel.app/register" rel="noopener noreferrer" target='_blank' className="btn-primary">{t('nav.registrarse', 'Registrarse')}</a>
               </div>
             </div>
           </div>
@@ -341,9 +341,9 @@ const ParkeoYaLanding = () => {
                           <div className="demo-parking-meta">{150 + i * 50}{t('hero.demoDistance', 'm')} • {t('hero.demoPrice', 'S/')} {3 + i}/{t('hero.demoPriceUnit', 'hora')}</div>
                         </div>
                       </div>
-                      <button className="demo-reserve-btn">
+                      <a href="https://parkeoya.vercel.app/login" rel="noopener noreferrer" target='_blank' className="demo-reserve-btn">
                         {t('hero.reserveBtn', 'Reservar')}
-                      </button>
+                      </a>
                     </div>
                   ))}
                 </div>
@@ -853,7 +853,7 @@ const ParkeoYaLanding = () => {
             </button>
             <button className="cta-btn-secondary">
               <TrendingUp />
-              <span>{t('cta.propietarioBtn', 'Registrarme como Propietario')}</span>
+              <a href="https://parkeoya.vercel.app/register" rel="noopener noreferrer" target='_blank' className="btn-conductor-sec" >{t('cta.propietarioBtn', 'Registrarme como Propietario')}</a>
             </button>
           </div>
         </div>
