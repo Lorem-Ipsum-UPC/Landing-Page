@@ -513,15 +513,15 @@ const ParkeoYaLanding = () => {
                 <div className="case-study-results">
                   <div className="case-study-metric">
                     <div className="case-study-metric-value positive">{study.results.occupancy}</div>
-                    <div className="case-study-metric-label">Ocupación</div>
+                    <div className="case-study-metric-label">{t('caseStudies.metrics.occupancy', 'Ocupación')}</div>
                   </div>
                   <div className="case-study-metric">
                     <div className="case-study-metric-value positive">{study.results.revenue}</div>
-                    <div className="case-study-metric-label">Ingresos</div>
+                    <div className="case-study-metric-label">{t('caseStudies.metrics.revenue', 'Ingresos')}</div>
                   </div>
                   <div className="case-study-metric">
                     <div className="case-study-metric-value neutral">{study.results.time}</div>
-                    <div className="case-study-metric-label">Tiempo</div>
+                    <div className="case-study-metric-label">{t('caseStudies.metrics.time', 'Tiempo')}</div>
                   </div>
                 </div>
 
@@ -532,7 +532,7 @@ const ParkeoYaLanding = () => {
                   </div>
                   <div className="case-study-author-info">
                     <div className="case-study-author-name">{study.owner}</div>
-                    <div className="case-study-author-role">Propietario</div>
+                    <div className="case-study-author-role">{t('caseStudies.ownerRole', 'Propietario')}</div>
                   </div>
                 </div>
               </div>
@@ -628,17 +628,17 @@ const ParkeoYaLanding = () => {
               <div className="user-demo-benefits">
                 <div className="text-center">
                   <div className="case-study-summary-stat">
-                    <div className="case-study-summary-number">+20%</div>
+                    <div className="case-study-summary-number">{t('owners.values.occupancyIncrease', '+20%')}</div>
                     <div className="case-study-summary-label">{t('owners.occupancyIncrease', 'Aumento promedio en ocupación')}</div>
                   </div>
                 </div>
                 <div className="case-study-results">
                   <div className="case-study-metric">
-                    <div className="case-study-metric-value neutral">5%</div>
+                    <div className="case-study-metric-value neutral">{t('owners.values.commission', '5%')}</div>
                     <div className="case-study-metric-label">{t('owners.commission', 'Comisión por reserva')}</div>
                   </div>
                   <div className="case-study-metric">
-                    <div className="case-study-metric-value neutral">24/7</div>
+                    <div className="case-study-metric-value neutral">{t('owners.values.monitoring', '24/7')}</div>
                     <div className="case-study-metric-label">{t('owners.monitoring', 'Monitoreo continuo')}</div>
                   </div>
                 </div>

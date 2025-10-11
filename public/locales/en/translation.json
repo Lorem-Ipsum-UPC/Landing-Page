@@ -1,7 +1,7 @@
 {
   "nav": {
     "inicio": "Home",
-    "sobreNosotros": "About Us",
+    "sobreNosotros": "About Us", 
     "caracteristicas": "Features",
     "precios": "Pricing",
     "casosExito": "Success Stories",
@@ -24,7 +24,7 @@
     "demoStatus": "spaces available near you",
     "reserveBtn": "Reserve",
     "demoDistance": "m",
-    "demoPrice": "$",
+    "demoPrice": "S/.",
     "demoPriceUnit": "hour"
   },
   "features": {
@@ -56,7 +56,7 @@
       "description": "Revolutionize the parking experience by connecting drivers and administrators through an intelligent platform that optimizes space usage and reduces search times."
     },
     "vision": {
-      "title": "Vision",
+      "title": "Vision", 
       "description": "Establish ourselves as the leading startup in parking management solutions nationwide, contributing to efficient mobility through innovative and sustainable technology."
     },
     "values": {
@@ -68,7 +68,7 @@
       "description": "In Lima, more than 100,000 vehicles are added to the automotive fleet each year. Drivers lose up to 20 minutes looking for parking during peak hours, generating:",
       "items": [
         "60% of traffic in central areas due to parking search",
-        "Increased CO₂ emissions and pollution",
+        "Increased CO₂ emissions and pollution", 
         "Stress and frustration in daily drivers",
         "Low profitability for parking lot owners"
       ],
@@ -118,7 +118,7 @@
   },
   "pricing": {
     "badge": "Plans and Pricing",
-    "title": "Solutions for Everyone",
+    "title": "Solutions for Everyone", 
     "subtitle": "From individual drivers to large parking companies",
     "conductorTab": "Driver",
     "propietarioTab": "Parking Owner",
@@ -129,7 +129,7 @@
         "period": "forever",
         "features": [
           "Unlimited parking search",
-          "Real-time reservations",
+          "Real-time reservations", 
           "Pay per use (no commissions)",
           "Reservation history",
           "Email support"
@@ -156,7 +156,7 @@
         "period": "month",
         "features": [
           "Up to 20 spaces",
-          "5% commission per reservation",
+          "5% commission per reservation", 
           "1 Edge Server included",
           "Basic dashboard",
           "Email support",
@@ -170,7 +170,7 @@
         "features": [
           "Up to 100 spaces",
           "4% commission per reservation",
-          "3 Edge Servers included",
+          "3 Edge Servers included", 
           "Advanced analytics",
           "Priority support",
           "API access",
@@ -199,7 +199,7 @@
     "conductorBenefits": [
       "Find parking in seconds",
       "Advance booking with QR code",
-      "Automatic payment for real time",
+      "Automatic payment for real time", 
       "Expiration notifications",
       "History and parking reviews"
     ],
@@ -218,7 +218,7 @@
     "companies": [
       {
         "name": "Centro Parking",
-        "location": "San Isidro, Lima",
+        "location": "San Isidro, Lima", 
         "testimonial": "ParkeoYa completely transformed our business. Automation allowed us to reduce staff and increase revenue simultaneously.",
         "owner": "Carlos Mendoza"
       },
@@ -236,13 +236,60 @@
       }
     ],
     "metrics": {
-      "occupancy": "occupancy",
-      "revenue": "revenue",
-      "time": "search time"
+      "occupancy": "Occupancy",
+      "revenue": "Revenue", 
+      "time": "Time"
+    },
+    "ownerRole": "Owner"
+  },
+  "caseStudiesSummary": {
+    "title": "Proven Results",
+    "subtitle": "Discover how ParkeoYa has transformed real businesses",
+    "summaryTitle": "Average Results from Our Clients",
+    "values": {
+      "occupancyIncrease": "+24%",
+      "revenueGrowth": "+29%",
+      "timeReduction": "-40%",
+      "avgROI": "4 months"
+    },
+    "metrics": {
+      "occupancyIncrease": "Occupancy Increase", 
+      "revenueGrowth": "Revenue Growth",
+      "timeReduction": "Time Reduction",
+      "avgROI": "Average ROI"
+    }
+  },
+  "conductors": {
+    "badge": "For Drivers",
+    "title": "Park Smart, Save Time", 
+    "description": "Forget about circling around. With ParkeoYa, find and reserve your space in seconds.",
+    "downloadApp": "Download App",
+    "benefits": {
+      "saveTime": "Save 15 min daily",
+      "saveTimeDescription": "Average in urban areas",
+      "fairPay": "Pay fair",
+      "fairPayDescription": "Automatic per-minute billing",
+      "guaranteed": "100% Guaranteed",
+      "guaranteedDescription": "Compensation if sensor fails"
+    }
+  },
+  "owners": {
+    "badge": "For Owners",
+    "title": "Maximize Your Revenue with IoT",
+    "description": "Automate management, increase occupancy and generate passive income with our platform.",
+    "registerProperty": "Register my Parking Lot",
+    "occupancyIncrease": "Average occupancy increase",
+    "commission": "Commission per reservation",
+    "monitoring": "Continuous monitoring",
+    "values": {
+      "occupancyIncrease": "+20%", 
+      "commission": "5%",
+      "monitoring": "24/7"
     }
   },
   "testimonials": {
     "title": "What Our Users Say",
+    "subtitle": "Real experiences, measurable results",
     "items": [
       {
         "name": "Joan Talizo",
@@ -251,7 +298,7 @@
       },
       {
         "name": "Rafael Soto",
-        "role": "Parking Owner",
+        "role": "Parking Owner", 
         "content": "I increased my occupancy by 20% and automated everything. The reports are clear and detailed."
       }
     ]
@@ -262,7 +309,7 @@
     "description": "Have questions? Want a personalized demo? Our team is ready to help you.",
     "methods": {
       "email": "Email",
-      "phone": "Phone",
+      "phone": "Phone", 
       "office": "Office"
     },
     "address": "Universidad Peruana de Ciencias Aplicadas\nAv. Primavera 2390, Santiago de Surco\nLima, Peru",
@@ -277,7 +324,7 @@
         "name": "Full Name",
         "namePlaceholder": "John Doe",
         "email": "Email",
-        "emailPlaceholder": "john@example.com",
+        "emailPlaceholder": "john@example.com", 
         "phone": "Phone",
         "phonePlaceholder": "+51 999 888 777",
         "userType": "User Type",
@@ -294,11 +341,11 @@
       "submitBtn": "Send Message",
       "validation": {
         "nameRequired": "Name is required",
-        "emailRequired": "Email is required",
+        "emailRequired": "Email is required", 
         "emailInvalid": "Must contain an @ and valid format",
         "phoneRequired": "Phone is required",
-        "phoneInvalid": "Must contain at least 7 digits", 
-        "userTypeRequired": "Must select a user type",
+        "phoneInvalid": "Must contain at least 7 digits",
+        "userTypeRequired": "Must select a user type", 
         "messageRequired": "Message is required"
       }
     }
@@ -317,7 +364,7 @@
     "description": "Smart parking with IoT technology for modern cities.",
     "sections": {
       "product": "Product",
-      "support": "Support",
+      "support": "Support", 
       "company": "Company"
     },
     "links": {
